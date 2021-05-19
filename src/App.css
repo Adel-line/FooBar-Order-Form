@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #0B2626;
+  background-color: #0b2626;
 }
 
 .mainS {
@@ -18,10 +18,107 @@
   margin-top: 1vw;
   margin-bottom: 1vw;
   background-color: antiquewhite;
-width: 10vw;
+  width: 10vw;
 }
 
 .labels {
   height: 7vw;
   width: 7vw;
+}
+
+/* WELCOME */
+.Welcome {
+  width: 50vw;
+}
+
+.WelcomeTitle {
+  color: #e3b449;
+  font-size: 6.5vw;
+}
+
+.WelcomeText {
+  color: #ffffff;
+  font-size: 2.2vw;
+}
+
+/* FORM */
+.Form {
+  background-color: #e3b449;
+  width: 39vw;
+  height: 78vw;
+  border-radius: 2vw;
+  position: relative;
+}
+
+/* BUTTON */
+.Button {
+  border: transparent;
+  border-radius: 1.5vw;
+  background-color: #afa188;
+  height: 6.5vw;
+  width: 100%;
+  position: absolute;
+  bottom: 0vw;
+  left: 0vw;
+  font-weight: bold;
+  font-size: 2.5vw;
+}
+
+/* TABLES */
+.Tables {
+  background-color: #ffffff;
+  width: 33vw;
+  height: 31vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 0.5vw;
+}
+
+.TablesText {
+  font-weight: bold;
+}
+
+/* ORDERING */
+.SubTotalVat {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 6vw;
+  width: 33vw;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5vw;
+}
+
+.Total {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 4.5vw;
+  width: 33vw;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5vw;
+}
+
+.Extra input {
+  border: transparent;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5vw;
+  width: 33vw;
+  height: 3.8vw;
+}
+
+.Item {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-left: auto;
+  margin-right: auto;
+  height: 11.5vw;
+  width: 33vw;
+  background-color: #ffffff;
 }

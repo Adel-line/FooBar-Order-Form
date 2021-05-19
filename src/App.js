@@ -1,4 +1,8 @@
 import './App.css';
+import Welcome from "./Welcome";
+import Tables from "./Tables";
+import Ordering from "./Ordering";
+import Payment from "./Payment";
 
 function App() {
 
@@ -6,6 +10,10 @@ const beers = [ { name:'Hoppily Ever After', price: 20}, {name:'Row 26', price: 
 
   return (
     <div className="App">
+      <Welcome />
+      <Tables />
+      <Ordering />
+      <Payment />
       <BeerList beers = {beers}/>
     </div>
   );
