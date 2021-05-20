@@ -61,11 +61,24 @@ function Template(props) {
       )
   }else if (props.amout === 2){
     return(
+      <div>
       <BeerList beers = {props.beers}/> 
+      <section className="base">
+        <div className="box">
+        </div>
+      </section>
+      </div>      
     )
   }else{
     return(
-      <Payement/>
+      <div>
+      
+      <section className="base">
+        <div className="box">
+        <Payement/>
+        </div>
+      </section>
+      </div>
     )
   }
 }
