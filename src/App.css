@@ -1,13 +1,29 @@
 .App {
   text-align: center;
+}
+
+body {
   background-color: #0B2626;
 }
 
 .mainS {
   margin: auto;
+
+}
+
+.box {
+  position: absolute;
+  background-color: #E3B449;
+  height: 45vw;
+  width: 25vw;
+margin-left: 62vw;
+margin-top: 2.5vw;
+border-radius: 2vw;
 }
 
 .beerbox {
+  background-color: #0B2626;
+  position: absolute;
   width: 50vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -18,10 +34,33 @@
   margin-top: 1vw;
   margin-bottom: 1vw;
   background-color: antiquewhite;
-width: 10vw;
+width: 9vw;
 }
 
 .labels {
-  height: 7vw;
-  width: 7vw;
+  height: 9vw;
+  width: 9vw;
+}
+
+.info1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 0.7vw;
+}
+
+.info2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: -1vw;
+}
+
+h1 {
+  font-size: 0.7vw;
+}
+
+p {
+  font-size: 0.8vw;
+  font-weight: 500;
 }
