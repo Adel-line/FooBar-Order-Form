@@ -1,5 +1,9 @@
 import './App.css';
+
 import BeerList from './BeerList';
+
+import Payement from "./payment";
+
 
 function App() {
 
@@ -8,7 +12,11 @@ const beers = [ { name:'HoppilyEverAfter', price: '20kr'}, {name:'Row26', price:
   return (
     <div className="App">
       <BeerList beers = {beers}/>
+
       <Template/>
+
+      <Payement/>
+
     </div>
   );
 ;
