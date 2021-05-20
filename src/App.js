@@ -1,4 +1,6 @@
 import './App.css';
+import Payement from "./payment"
+
 
 function App() {
 
@@ -7,6 +9,7 @@ const beers = [ { name:'Hoppily Ever After', price: 20}, {name:'Row 26', price: 
   return (
     <div className="App">
       <BeerList beers = {beers}/>
+      <Payement/  >
     </div>
   );
 ;
