@@ -1,40 +1,27 @@
 import './App.css';
+import BeerList from './BeerList';
 
 function App() {
 
-const beers = [ { name:'Hoppily Ever After', price: 20}, {name:'Row 26', price: 40}, {name:'GitHop', price: '20kr'}, {name: 'Sleighride', price:'20kr'}, {name:'Mowintime', price: '30'}, {name:'ElHefe', price: '40'}, {name:'FairyTaleAle', price: '20'}, {name:'Mowintime', price: '30'}, {name:'Hollaback Lager', price: '30'}, {name:'Ruined Childhood', price: '30'}, {name: 'Steampunk', price: '30'}];
+const beers = [ { name:'HoppilyEverAfter', price: '20kr'}, {name:'Row26', price: '40kr'}, {name:'GitHop', price: '20kr'}, {name: 'Sleighride', price:'20kr'}, {name:'Mowintime', price: '30kr'}, {name:'ElHefe', price: '40kr'}, {name:'FairyTaleAle', price: '20kr'}, {name:'HollabackLager', price: '30kr'}, {name:'RuinedChildhood', price: '30kr'}, {name: 'Steampunk', price: '30kr'}];
 
   return (
     <div className="App">
       <BeerList beers = {beers}/>
+      <Template/>
     </div>
   );
 ;
 }
 
-function BeerList(props) {
-  // console.log(beers.object);
-  return (
-  <div className="mainS">
-    <section className="beerbox">
-      {props.beers.map(items => <Beer {...items}/>)}
-    </section>
-</div>);
-
-}
-
-function Beer(props) {
-
-  return (
-    <article className="tagbox">
-  <img className="labels" alt="" src= {`${props.name}.png`}></img>
-  <h1>{props.name}</h1>
-  <p>{props.price}</p>
-  <button>Read more</button>
-  <button>+</button>
-      </article>
-  );
-   }
-
-
 export default App;
+
+function Template() {
+  return (
+  <section className="base">
+<div className="box">
+
+</div>
+  </section>
+  )
+}
