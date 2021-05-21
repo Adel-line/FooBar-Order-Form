@@ -71,6 +71,7 @@ function Template(props) {
       <section className="base">
         <div className="box">
           <Tables />
+          <button className="Button">Proceed with order</button>
         </div>
       </section>
       </div>
@@ -83,6 +84,7 @@ function Template(props) {
       <section className="base">
         <div className="box">
         {/* <Ordering /> */}
+        <button className="Button">payment</button>
         </div>
       </section>
       </div>      
@@ -90,10 +92,11 @@ function Template(props) {
   }else{
     return(
       <div>
-      
+      <Welcome />
       <section className="base">
         <div className="box">
         <Payment/>
+        <button className="Button">Pay</button>
         </div>
       </section>
       </div>
