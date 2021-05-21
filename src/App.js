@@ -1,19 +1,19 @@
 import './App.css';
 
-import Welcome from "./Welcome";
-import Tables from "./tables";
-import Ordering from "./Ordering";
+
+// import Ordering from "./Ordering";
 import {useState} from "react";
 import BeerList from './BeerList';
 import Payment from "./payment";
-
+import Tables from "./tables";
 import Order from './Form2';
+import Welcome from './Welcome';
 
 
 
 function App() {
 
-const beers = [ { name:'HoppilyEverAfter', price: '20kr'}, {name:'Row26', price: '40kr'}, {name:'GitHop', price: '20kr'}, {name: 'Sleighride', price:'20kr'}, {name:'Mowintime', price: '30kr'}, {name:'ElHefe', price: '40kr'}, {name:'FairyTaleAle', price: '20kr'}, {name:'HollabackLager', price: '30kr'}, {name:'RuinedChildhood', price: '30kr'}];
+const beers = [ { name:'HoppilyEverAfter', price: '20kr', key:"1"}, {name:'Row26', price: '40kr', key:"2"}, {name:'GitHop', price: '20kr', key:"3"}, {name: 'Sleighride', price:'20kr', key:"4"}, {name:'Mowintime', price: '30kr', key:"5"}, {name:'ElHefe', price: '40kr', key:"6"}, {name:'FairyTaleAle', price: '20kr', key:"7"}, {name:'HollabackLager', price: '30kr', key:"8"}, {name:'RuinedChildhood', price: '30kr', key:"9"}];
 
 
 
@@ -25,7 +25,13 @@ console.log();
 function clicked (){
   console.log("haha lol");
   setAmout((prevState) => {
-    return prevState+1
+    if (prevState===3){
+      return prevState
+
+    }else{
+      return prevState+1
+    }
+    // return prevState+1
    } );
 }
 function clickedminus (){
@@ -61,10 +67,10 @@ function Template(props) {
   if (props.amout === 1) {
     return (
       <div>
-        <Welcome />
+      <Welcome />
       <section className="base">
         <div className="box">
-        <Tables />
+          <Tables />
         </div>
       </section>
       </div>
@@ -76,7 +82,7 @@ function Template(props) {
       <BeerList beers = {props.beers}/> 
       <section className="base">
         <div className="box">
-        <Ordering />
+        {/* <Ordering /> */}
         </div>
       </section>
       </div>      
