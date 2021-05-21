@@ -1,5 +1,14 @@
 .App {
   text-align: center;
+
+  background-color: #0b2626;
+}
+
+.change-page {
+  position: absolute;
+  right: 1vw;
+}
+body {
   background-color: #0b2626;
 }
 
@@ -7,7 +16,19 @@
   margin: auto;
 }
 
+.box {
+  position: absolute;
+  background-color: #e3b449;
+  height: 45vw;
+  width: 25vw;
+  margin-left: 62vw;
+  margin-top: 2.5vw;
+  border-radius: 2vw;
+}
+
 .beerbox {
+  background-color: #0b2626;
+  position: absolute;
   width: 50vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -18,6 +39,7 @@
   margin-top: 1vw;
   margin-bottom: 1vw;
   background-color: antiquewhite;
+
   width: 10vw;
 }
 
@@ -121,4 +143,33 @@
   height: 11.5vw;
   width: 33vw;
   background-color: #ffffff;
+}
+
+.labels {
+  height: 9vw;
+  width: 9vw;
+}
+
+.info1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 0.7vw;
+  margin-top: -2;
+}
+
+.info2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: -1vw;
+}
+
+h1 {
+  font-size: 0.7vw;
+}
+
+p {
+  font-size: 0.8vw;
+  font-weight: 500;
 }

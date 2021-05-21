@@ -1,12 +1,18 @@
 import './App.css';
+
 import Welcome from "./Welcome";
 import Tables from "./Tables";
 import Ordering from "./Ordering";
-import Payment from "./Payment";
+import {useState} from "react";
+import BeerList from './BeerList';
+import Payement from "./payment";
+
+
 
 function App() {
 
-const beers = [ { name:'Hoppily Ever After', price: 20}, {name:'Row 26', price: 40}, {name:'GitHop', price: '20kr'}, {name: 'Sleighride', price:'20kr'}, {name:'Mowintime', price: '30'}, {name:'ElHefe', price: '40'}, {name:'FairyTaleAle', price: '20'}, {name:'Mowintime', price: '30'}, {name:'Hollaback Lager', price: '30'}, {name:'Ruined Childhood', price: '30'}, {name: 'Steampunk', price: '30'}];
+const beers = [ { name:'HoppilyEverAfter', price: '20kr'}, {name:'Row26', price: '40kr'}, {name:'GitHop', price: '20kr'}, {name: 'Sleighride', price:'20kr'}, {name:'Mowintime', price: '30kr'}, {name:'ElHefe', price: '40kr'}, {name:'FairyTaleAle', price: '20kr'}, {name:'HollabackLager', price: '30kr'}, {name:'RuinedChildhood', price: '30kr'}, {name: 'Steampunk', price: '30kr'}];
+
 
   return (
     <div className="App">
@@ -18,31 +24,76 @@ const beers = [ { name:'Hoppily Ever After', price: 20}, {name:'Row 26', price: 
     </div>
   );
 ;
+
+const [amout, setAmout] = useState(1);
+console.log();
+
+function clicked (){
+  console.log("haha lol");
+  setAmout((prevState) => {
+    return prevState+1
+   } );
 }
+function clickedminus (){
+  console.log("haha lol");
+  setAmout((prevState) => {
+    if (!prevState){
+      return prevState
 
-function BeerList(props) {
-  // console.log(beers.object);
-  return (
-  <div className="mainS">
-    <section className="beerbox">
-      {props.beers.map(items => <Beer {...items}/>)}
-    </section>
-</div>);
-
+    }else{
+      return prevState-1
+    }
+    
+   } );
 }
-
-function Beer(props) {
-
   return (
-    <article className="tagbox">
-  <img className="labels" alt="" src= {`${props.name}.png`}></img>
-  <h1>{props.name}</h1>
-  <p>{props.price}</p>
-  <button>Read more</button>
-  <button>+</button>
-      </article>
+    <div className="App">
+      
+
+      <Template amout={amout} beers={beers} />
+
+      <div className="change-page">
+          <button onClick={clicked} > click me for more! </button>
+            {amout}
+          <button onClick={clickedminus} > click me for less! </button>
+      </div>
+
+    </div>
   );
-   }
-
+;
+}
 
 export default App;
+
+function Template(props) {
+  console.log(props);
+  if (props.amout === 1) {
+    return (
+      <section className="base">
+        <div className="box">
+        </div>
+      </section>
+      )
+  }else if (props.amout === 2){
+    return(
+      <div>
+      <BeerList beers = {props.beers}/> 
+      <section className="base">
+        <div className="box">
+        </div>
+      </section>
+      </div>      
+    )
+  }else{
+    return(
+      <div>
+      
+      <section className="base">
+        <div className="box">
+        <Payement/>
+        </div>
+      </section>
+      </div>
+    )
+  }
+}
