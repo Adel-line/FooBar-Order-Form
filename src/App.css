@@ -7,6 +7,7 @@
 .change-page {
   position: absolute;
   right: 1vw;
+  top: 1vw;
 }
 body {
   background-color: #0b2626;
@@ -19,11 +20,13 @@ body {
 .box {
   position: absolute;
   background-color: #e3b449;
-  height: 45vw;
-  width: 24.4vw;
-  margin-left: 62vw;
-  margin-top: 2.5vw;
+  width: 35vw;
+  height: 65vw;
   border-radius: 2vw;
+  /* margin-left: 55vw; */
+  right: 3vw;
+  /* margin-top: 2.5vw; */
+  top: 0vw;
 }
 
 .beerbox {
@@ -65,13 +68,13 @@ body {
 }
 
 /* FORM */
-.Form {
+/* .Form {
   background-color: #e3b449;
   width: 39vw;
   height: 78vw;
   border-radius: 2vw;
   position: relative;
-}
+} */
 
 /* BUTTON */
 .Button {
