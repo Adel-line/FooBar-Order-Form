@@ -1,44 +1,149 @@
 .App {
   text-align: center;
+
+  background-color: #0b2626;
 }
 
-.change-page{
+.change-page {
   position: absolute;
   right: 1vw;
 }
 body {
-  background-color: #0B2626;
+  background-color: #0b2626;
 }
 
 .mainS {
   margin: auto;
-
 }
 
 .box {
   position: absolute;
-  background-color: #E3B449;
+  background-color: #e3b449;
   height: 45vw;
-  width: 25vw;
-margin-left: 62vw;
-margin-top: 2.5vw;
-border-radius: 2vw;
+  width: 24.4vw;
+  margin-left: 62vw;
+  margin-top: 2.5vw;
+  border-radius: 2vw;
 }
 
 .beerbox {
-  background-color: #0B2626;
+  background-color: #0b2626;
   position: absolute;
   width: 50vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin-left: 8vw;
+  margin-top: 4.5vw;
 }
 
 .tagbox {
   margin-top: 1vw;
   margin-bottom: 1vw;
   background-color: antiquewhite;
-width: 9vw;
+
+  width: 10vw;
+}
+
+.labels {
+  height: 7vw;
+  width: 7vw;
+}
+
+/* WELCOME */
+.Welcome {
+  width: 50vw;
+}
+
+.WelcomeTitle {
+  color: #e3b449;
+  font-size: 6.5vw;
+}
+
+.WelcomeText {
+  color: #ffffff;
+  font-size: 2.2vw;
+}
+
+/* FORM */
+.Form {
+  background-color: #e3b449;
+  width: 39vw;
+  height: 78vw;
+  border-radius: 2vw;
+  position: relative;
+}
+
+/* BUTTON */
+.Button {
+  border: transparent;
+  border-radius: 1.5vw;
+  background-color: #afa188;
+  height: 6.5vw;
+  width: 100%;
+  position: absolute;
+  bottom: 0vw;
+  left: 0vw;
+  font-weight: bold;
+  font-size: 2.5vw;
+}
+
+/* TABLES */
+.Tables {
+  background-color: #ffffff;
+  width: 33vw;
+  height: 31vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 0.5vw;
+}
+
+.TablesText {
+  font-weight: bold;
+}
+
+/* ORDERING */
+.SubTotalVat {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 6vw;
+  width: 33vw;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5vw;
+}
+
+.Total {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 4.5vw;
+  width: 33vw;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5vw;
+}
+
+.Extra input {
+  border: transparent;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5vw;
+  width: 33vw;
+  height: 3.8vw;
+}
+
+.Item {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-left: auto;
+  margin-right: auto;
+  height: 11.5vw;
+  width: 33vw;
+  background-color: #ffffff;
 }
 
 .labels {
@@ -51,20 +156,99 @@ width: 9vw;
   flex-direction: row;
   justify-content: space-around;
   font-size: 0.7vw;
+  margin-top: -0.8vw;
 }
 
 .info2 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: -1vw;
+  margin-top: -0.6vw;
 }
 
-h1 {
+h2 {
   font-size: 0.7vw;
 }
 
 p {
   font-size: 0.8vw;
   font-weight: 500;
+}
+
+/* CART */
+.cart {
+  position: absolute;
+  z-index: 2;
+  height: 40vw;
+  width: 30vw;
+  margin-left: 63vw;
+  margin-top: 3vw;
+}
+
+.items {
+  display: flex;
+  flex-direction: row;
+  height: 2vw;
+  width: 20.5vw;
+  margin-top: 0.5vw;
+}
+
+.items img {
+  height: 2.2vw;
+  margin-top: 0.6vw;
+  margin-right: 0.5vw;
+}
+
+.addfield {
+  height: 5.5vw;
+  width: 20.5vw;
+  background-color: white;
+  border-radius: 0.5vw;
+  text-align: left;
+  padding: 1vw;
+  margin-top: 2vw;
+}
+
+.subtotal {
+  height: 3.5vw;
+  width: 20.5vw;
+  background-color: white;
+  border-radius: 0.5vw;
+  text-align: left;
+  padding: 1vw;
+  margin-top: 10vw;
+}
+
+.total {
+  display: flex;
+  justify-content: space-around;
+  height: 2vw;
+  width: 20.5vw;
+  background-color: white;
+  border-radius: 0.5vw;
+  text-align: left;
+  padding: 1vw;
+  margin-top: 2vw;
+}
+
+.paybtn {
+  background-color: rgb(65, 29, 9);
+  border-radius: 0.5vw;
+  text-align: left;
+  height: 3vw;
+  width: 25.5vw;
+  margin-top: 6vw;
+  margin-left: -2vw;
+  color: white;
+  text-align: center;
+  font-size: 2vw;
+}
+
+input {
+  width: 20vw;
+  height: 2.3vw;
+  border-radius: 0.6vw;
+  border: 2px solid white;
+  margin-top: 1vw;
+  margin-right: 8vw;
 }

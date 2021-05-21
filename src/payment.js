@@ -1,5 +1,5 @@
 
-export default function Payement () {
+export default function Payment () {
 
     return (
         <fieldset>
