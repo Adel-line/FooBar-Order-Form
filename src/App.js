@@ -7,11 +7,13 @@ import {useState} from "react";
 import BeerList from './BeerList';
 import Payement from "./payment";
 
+import Order from './Form2';
+
 
 
 function App() {
 
-const beers = [ { name:'HoppilyEverAfter', price: '20kr'}, {name:'Row26', price: '40kr'}, {name:'GitHop', price: '20kr'}, {name: 'Sleighride', price:'20kr'}, {name:'Mowintime', price: '30kr'}, {name:'ElHefe', price: '40kr'}, {name:'FairyTaleAle', price: '20kr'}, {name:'HollabackLager', price: '30kr'}, {name:'RuinedChildhood', price: '30kr'}, {name: 'Steampunk', price: '30kr'}];
+const beers = [ { name:'HoppilyEverAfter', price: '20kr'}, {name:'Row26', price: '40kr'}, {name:'GitHop', price: '20kr'}, {name: 'Sleighride', price:'20kr'}, {name:'Mowintime', price: '30kr'}, {name:'ElHefe', price: '40kr'}, {name:'FairyTaleAle', price: '20kr'}, {name:'HollabackLager', price: '30kr'}, {name:'RuinedChildhood', price: '30kr'}];
 
 
   return (
@@ -77,6 +79,7 @@ function Template(props) {
   }else if (props.amout === 2){
     return(
       <div>
+        <Order/>
       <BeerList beers = {props.beers}/> 
       <section className="base">
         <div className="box">
