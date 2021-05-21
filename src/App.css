@@ -20,17 +20,10 @@ body {
   position: absolute;
   background-color: #e3b449;
   height: 45vw;
-<<<<<<< HEAD
-  width: 25vw;
+  width: 24.4vw;
   margin-left: 62vw;
   margin-top: 2.5vw;
   border-radius: 2vw;
-=======
-  width: 24.4vw;
-margin-left: 62vw;
-margin-top: 2.5vw;
-border-radius: 2vw;
->>>>>>> 9e4e25ef12f0b2aef0505cf89f304b1c64fd43ef
 }
 
 .beerbox {
@@ -181,8 +174,6 @@ p {
   font-size: 0.8vw;
   font-weight: 500;
 }
-<<<<<<< HEAD
-=======
 
 /* CART */
 .cart {
@@ -219,13 +210,13 @@ p {
 }
 
 .subtotal {
-   height: 3.5vw;
-   width: 20.5vw;
-   background-color: white;
-   border-radius: 0.5vw;
-   text-align: left;
-   padding: 1vw;
-   margin-top: 10vw;
+  height: 3.5vw;
+  width: 20.5vw;
+  background-color: white;
+  border-radius: 0.5vw;
+  text-align: left;
+  padding: 1vw;
+  margin-top: 10vw;
 }
 
 .total {
@@ -246,11 +237,11 @@ p {
   text-align: left;
   height: 3vw;
   width: 25.5vw;
-margin-top: 6vw;
-margin-left: -2vw;
-color: white;
-text-align: center;
-font-size: 2vw;
+  margin-top: 6vw;
+  margin-left: -2vw;
+  color: white;
+  text-align: center;
+  font-size: 2vw;
 }
 
 input {
@@ -261,4 +252,3 @@ input {
   margin-top: 1vw;
   margin-right: 8vw;
 }
->>>>>>> 9e4e25ef12f0b2aef0505cf89f304b1c64fd43ef

@@ -1,11 +1,11 @@
 import './App.css';
 
 import Welcome from "./Welcome";
-import Tables from "./Tables";
+import Tables from "./tables";
 import Ordering from "./Ordering";
 import {useState} from "react";
 import BeerList from './BeerList';
-import Payement from "./payment";
+import Payment from "./payment";
 
 import Order from './Form2';
 
@@ -16,16 +16,8 @@ function App() {
 const beers = [ { name:'HoppilyEverAfter', price: '20kr'}, {name:'Row26', price: '40kr'}, {name:'GitHop', price: '20kr'}, {name: 'Sleighride', price:'20kr'}, {name:'Mowintime', price: '30kr'}, {name:'ElHefe', price: '40kr'}, {name:'FairyTaleAle', price: '20kr'}, {name:'HollabackLager', price: '30kr'}, {name:'RuinedChildhood', price: '30kr'}];
 
 
-  return (
-    <div className="App">
-      <Welcome />
-      <Tables />
-      <Ordering />
-      <Payment />
-      <BeerList beers = {beers}/>
-    </div>
-  );
-;
+
+
 
 const [amout, setAmout] = useState(1);
 console.log();
@@ -50,10 +42,7 @@ function clickedminus (){
 }
   return (
     <div className="App">
-      
-
       <Template amout={amout} beers={beers} />
-
       <div className="change-page">
           <button onClick={clicked} > click me for more! </button>
             {amout}
@@ -71,10 +60,14 @@ function Template(props) {
   console.log(props);
   if (props.amout === 1) {
     return (
+      <div>
+        <Welcome />
       <section className="base">
         <div className="box">
+        <Tables />
         </div>
       </section>
+      </div>
       )
   }else if (props.amout === 2){
     return(
@@ -83,6 +76,7 @@ function Template(props) {
       <BeerList beers = {props.beers}/> 
       <section className="base">
         <div className="box">
+        <Ordering />
         </div>
       </section>
       </div>      
@@ -93,7 +87,7 @@ function Template(props) {
       
       <section className="base">
         <div className="box">
-        <Payement/>
+        <Payment/>
         </div>
       </section>
       </div>
