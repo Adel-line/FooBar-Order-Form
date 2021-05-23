@@ -20,13 +20,15 @@ body {
 .box {
   position: absolute;
   background-color: #e3b449;
-  width: 35vw;
-  height: 65vw;
+  /* width: 35vw;
+  height: 65vw; */
+  height: 45vw;
+  width: 25vw;
   border-radius: 2vw;
   /* margin-left: 55vw; */
-  right: 3vw;
+  right: 9vw;
   /* margin-top: 2.5vw; */
-  top: 0vw;
+  top: 4vw;
 }
 
 .beerbox {
@@ -54,17 +56,31 @@ body {
 
 /* WELCOME */
 .Welcome {
-  width: 50vw;
+  position: absolute;
+  left: 10vw;
+  top: 2vw;
+  width: 45vw;
 }
 
 .WelcomeTitle {
+  position: absolute;
   color: #e3b449;
   font-size: 6.5vw;
 }
 
-.WelcomeText {
+.WelcomeText1 {
+  position: absolute;
   color: #ffffff;
-  font-size: 2.2vw;
+  font-size: 1.9vw;
+  top: 22vw;
+  font-weight: 300;
+}
+.WelcomeText2 {
+  position: absolute;
+  color: #ffffff;
+  font-size: 1.9vw;
+  top: 30.8vw;
+  font-weight: 300;
 }
 
 /* FORM */
@@ -81,31 +97,108 @@ body {
   border: transparent;
   border-radius: 1.5vw;
   background-color: #afa188;
-  height: 6.5vw;
+  height: 4.5vw;
   width: 100%;
   position: absolute;
   bottom: 0vw;
   left: 0vw;
-  font-weight: bold;
-  font-size: 2.5vw;
+  font-weight: 800;
+  font-size: 1.5vw;
 }
 
 /* TABLES */
 .Tables {
+  position: absolute;
   background-color: #ffffff;
-  width: 33vw;
-  height: 31vw;
-  margin-left: auto;
-  margin-right: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  height: 20vw;
+  width: 20vw;
+  bottom: 12vw;
+  left: 2.5vw;
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
   border-radius: 0.5vw;
 }
 
-.TablesText {
-  font-weight: bold;
+.TablesGrid {
+  align-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 20vw;
+  width: 20vw;
 }
 
+.TablesText {
+  font-weight: 800;
+  /* color: #ffffff; */
+  color: red;
+  z-index: 10;
+}
+
+.TablesOrder {
+  font-size: 1.5vw;
+  font-weight: 800;
+}
+
+.TablesHeader {
+  font-size: 1.1vw;
+  text-align: left;
+  margin-left: 3vw;
+  position: absolute;
+  bottom: 32vw;
+  font-weight: 700;
+}
+
+.Table {
+  position: relative;
+}
+
+.Img1Collum1 {
+  /* left: 1.2vw; */
+}
+
+.Img1Collum2 {
+  /* left: 7.5vw; */
+}
+
+.Img1Collum3 {
+  /* left: 14vw; */
+}
+
+.Img2Collum1 {
+  /* left: 0.8vw; */
+}
+
+.Img2Collum2 {
+  /* left: 7.1vw; */
+}
+
+.Img2Collum3 {
+  /* left: 13.6vw; */
+}
+
+.TableImg1 {
+  position: absolute;
+  /* top: 1vw; */
+  z-index: 1;
+  width: 5vw;
+  height: 5vw;
+}
+
+.TableImg2 {
+  position: absolute;
+  /* top: 7vw; */
+  width: 6vw;
+  height: 6vw;
+  z-index: 1;
+}
+
+.TableImg3 {
+  position: absolute;
+  /* top: 13.5vw; */
+  width: 6vw;
+  height: 6vw;
+  z-index: 1;
+}
 /* ORDERING */
 .SubTotalVat {
   display: grid;
