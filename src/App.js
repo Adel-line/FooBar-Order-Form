@@ -1,11 +1,8 @@
 import './App.css';
 import {useState} from "react";
-
 import BeerList from './BeerList';
-
 import Payement from "./payment";
-
-import Order from './Form2';
+import Order from './Basket';
 
 
 function App() {
