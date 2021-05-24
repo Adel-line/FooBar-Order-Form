@@ -1,32 +1,38 @@
 .App {
   text-align: center;
+
+  background-color: #0b2626;
 }
 
-.change-page{
+.change-page {
   position: absolute;
   right: 1vw;
+  top: 1vw;
 }
 body {
-  background-color: #0B2626;
+  background-color: #0b2626;
 }
 
 .mainS {
   margin: auto;
-
 }
 
 .box {
   position: absolute;
-  background-color: #E3B449;
+  background-color: #e3b449;
+  /* width: 35vw;
+  height: 65vw; */
   height: 45vw;
-  width: 24.4vw;
-margin-left: 62vw;
-margin-top: 2.5vw;
-border-radius: 2vw;
+  width: 25vw;
+  border-radius: 2vw;
+  /* margin-left: 55vw; */
+  right: 9vw;
+  /* margin-top: 2.5vw; */
+  top: 4vw;
 }
 
 .beerbox {
-  background-color: #0B2626;
+  background-color: #0b2626;
   position: absolute;
   width: 50vw;
   display: grid;
@@ -39,7 +45,201 @@ border-radius: 2vw;
   margin-top: 1vw;
   margin-bottom: 1vw;
   background-color: antiquewhite;
-width: 9vw;
+
+  width: 10vw;
+}
+
+.labels {
+  height: 7vw;
+  width: 7vw;
+}
+
+/* WELCOME */
+.Welcome {
+  position: absolute;
+  left: 10vw;
+  top: 2vw;
+  width: 45vw;
+}
+
+.WelcomeTitle {
+  position: absolute;
+  color: #e3b449;
+  font-size: 6.5vw;
+}
+
+.WelcomeText1 {
+  position: absolute;
+  color: #ffffff;
+  font-size: 1.9vw;
+  top: 22vw;
+  font-weight: 300;
+}
+.WelcomeText2 {
+  position: absolute;
+  color: #ffffff;
+  font-size: 1.9vw;
+  top: 30.8vw;
+  font-weight: 300;
+}
+
+/* FORM */
+/* .Form {
+  background-color: #e3b449;
+  width: 39vw;
+  height: 78vw;
+  border-radius: 2vw;
+  position: relative;
+} */
+
+/* BUTTON */
+.Button {
+  border: transparent;
+  border-radius: 1.5vw;
+  background-color: #afa188;
+  height: 4.5vw;
+  width: 100%;
+  position: absolute;
+  bottom: 0vw;
+  left: 0vw;
+  font-weight: 800;
+  font-size: 1.5vw;
+}
+
+/* TABLES */
+.Tables {
+  position: absolute;
+  background-color: #ffffff;
+  height: 20vw;
+  width: 20vw;
+  bottom: 12vw;
+  left: 2.5vw;
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+  border-radius: 0.5vw;
+}
+
+.TablesGrid {
+  align-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 20vw;
+  width: 20vw;
+}
+
+.TablesText {
+  font-weight: 800;
+  /* color: #ffffff; */
+  color: red;
+  z-index: 10;
+}
+
+.TablesOrder {
+  font-size: 1.5vw;
+  font-weight: 800;
+}
+
+.TablesHeader {
+  font-size: 1.1vw;
+  text-align: left;
+  margin-left: 3vw;
+  position: absolute;
+  bottom: 32vw;
+  font-weight: 700;
+}
+
+.Table {
+  position: relative;
+}
+
+.Img1Collum1 {
+  /* left: 1.2vw; */
+}
+
+.Img1Collum2 {
+  /* left: 7.5vw; */
+}
+
+.Img1Collum3 {
+  /* left: 14vw; */
+}
+
+.Img2Collum1 {
+  /* left: 0.8vw; */
+}
+
+.Img2Collum2 {
+  /* left: 7.1vw; */
+}
+
+.Img2Collum3 {
+  /* left: 13.6vw; */
+}
+
+.TableImg1 {
+  position: absolute;
+  /* top: 1vw; */
+  z-index: 1;
+  width: 5vw;
+  height: 5vw;
+}
+
+.TableImg2 {
+  position: absolute;
+  /* top: 7vw; */
+  width: 6vw;
+  height: 6vw;
+  z-index: 1;
+}
+
+.TableImg3 {
+  position: absolute;
+  /* top: 13.5vw; */
+  width: 6vw;
+  height: 6vw;
+  z-index: 1;
+}
+/* ORDERING */
+.SubTotalVat {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 6vw;
+  width: 33vw;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5vw;
+}
+
+.Total {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 4.5vw;
+  width: 33vw;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5vw;
+}
+
+.Extra input {
+  border: transparent;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5vw;
+  width: 33vw;
+  height: 3.8vw;
+}
+
+.Item {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-left: auto;
+  margin-right: auto;
+  height: 11.5vw;
+  width: 33vw;
+  background-color: #ffffff;
 }
 
 .labels {
@@ -106,13 +306,13 @@ p {
 }
 
 .subtotal {
-   height: 3.5vw;
-   width: 20.5vw;
-   background-color: white;
-   border-radius: 0.5vw;
-   text-align: left;
-   padding: 1vw;
-   margin-top: 10vw;
+  height: 3.5vw;
+  width: 20.5vw;
+  background-color: white;
+  border-radius: 0.5vw;
+  text-align: left;
+  padding: 1vw;
+  margin-top: 10vw;
 }
 
 .total {
@@ -133,11 +333,11 @@ p {
   text-align: left;
   height: 3vw;
   width: 25.5vw;
-margin-top: 6vw;
-margin-left: -2vw;
-color: white;
-text-align: center;
-font-size: 2vw;
+  margin-top: 6vw;
+  margin-left: -2vw;
+  color: white;
+  text-align: center;
+  font-size: 2vw;
 }
 
 input {

@@ -19,7 +19,7 @@ export default function Order() {
 </div>
 <div className="total">
 <h2>Total:</h2>
-<button className="paybtn">PAY</button>
+{/* <button className="paybtn">PAY</button> */}
 </div>
         </section>
     )
