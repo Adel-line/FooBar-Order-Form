@@ -107,6 +107,25 @@ body {
 }
 
 /* TABLES */
+[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type="radio"] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type="radio"]:checked + img {
+  border: 3px solid #f00;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
 .Tables {
   position: absolute;
   background-color: #ffffff;
@@ -129,9 +148,9 @@ body {
 
 .TablesText {
   font-weight: 800;
-  /* color: #ffffff; */
-  color: red;
+  color: #ffffff;
   z-index: 10;
+  position: relative;
 }
 
 .TablesOrder {
@@ -153,48 +172,51 @@ body {
 }
 
 .Img1Collum1 {
-  /* left: 1.2vw; */
+  left: 0.8vw;
+  top: -2vw;
 }
 
 .Img1Collum2 {
-  /* left: 7.5vw; */
+  left: 0.8vw;
+  top: -2vw;
 }
 
 .Img1Collum3 {
-  /* left: 14vw; */
+  left: 0.8vw;
+  top: -2vw;
 }
 
 .Img2Collum1 {
-  /* left: 0.8vw; */
+  left: 0.3vw;
+  top: -2.4vw;
 }
 
 .Img2Collum2 {
-  /* left: 7.1vw; */
+  left: 0.3vw;
+  top: -2.4vw;
 }
 
 .Img2Collum3 {
-  /* left: 13.6vw; */
+  left: 0.3vw;
+  top: -2.4vw;
 }
 
-.TableImg1 {
+.TableRow1 {
   position: absolute;
-  /* top: 1vw; */
   z-index: 1;
   width: 5vw;
   height: 5vw;
 }
 
-.TableImg2 {
+.TableRow2 {
   position: absolute;
-  /* top: 7vw; */
   width: 6vw;
   height: 6vw;
   z-index: 1;
 }
 
-.TableImg3 {
+.TableRow3 {
   position: absolute;
-  /* top: 13.5vw; */
   width: 6vw;
   height: 6vw;
   z-index: 1;
