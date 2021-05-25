@@ -1,4 +1,7 @@
+import React from 'react';
+
 export default function Beer(props) {
+ const onAdd = props.onAdd;
 
     return (
       <section className="tagbox">
@@ -9,10 +12,12 @@ export default function Beer(props) {
     </div>
     <div className="info2">
     <button>Read more</button>
-    <button>+</button>
+    <button onClick={() => onAdd(props)}>+</button>
     </div>
         </section>
      
     );
-     }
-  
+     
+}
+
+
