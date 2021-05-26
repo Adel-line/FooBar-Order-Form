@@ -222,26 +222,35 @@ body {
   z-index: 1;
 }
 /* ORDERING */
-.SubTotalVat {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  height: 6vw;
-  width: 33vw;
+.itemsHolder {
+  height: 15vw;
+  width: 23vw;
   background-color: #ffffff;
-  margin-left: auto;
-  margin-right: auto;
+  border-radius: 0.5vw;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2vw;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+
+
+.total {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 5.5vw;
+  width: 23vw;
+  background-color: #ffffff;
   border-radius: 0.5vw;
 }
 
-.Total {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  height: 4.5vw;
-  width: 33vw;
-  background-color: #ffffff;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 0.5vw;
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.2vw;
 }
 
 .Extra input {
@@ -305,6 +314,16 @@ p {
 
 #details {
   display: flex;
+  justify-content: space-between;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0.5vw;
+  align-items: baseline;
+}
+
+#details button{
+  border-radius: 15vw;
+  background-color: rgb(218, 138, 35);
+  margin-right: 1vw;
 }
 
 .items {
@@ -342,15 +361,16 @@ p {
 }
 
 .total {
+  position: relative;
   display: flex;
   justify-content: space-around;
-  height: 2vw;
+  height: 5vw;
   width: 20.5vw;
   background-color: white;
   border-radius: 0.5vw;
   text-align: left;
   padding: 1vw;
-  margin-top: 2vw;
+  top: 7vw;
 }
 
 .paybtn {

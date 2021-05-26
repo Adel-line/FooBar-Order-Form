@@ -6,36 +6,70 @@ export default function Basket(props) {
     const {cartItems, onAdd, onRemove} = props;
 
     // Money calculations
+    let itemsPrice =[];
+    let subtotal = 0;
+    cartItems.forEach((item) => {
+    let itemName = ( item.price * item.amount);
+    console.log(itemName);
+    itemsPrice.push(itemName);
+    }
+    );
 
-    // const itemsPrice = cartItems.reduce((a, c) => a+c.price * c.qty, 0);
-    // const taxPrice = itemsPrice * 0.14;
-    // const totalPrice = itemsPrice + taxPrice;
+    itemsPrice.forEach((item) => {
+        subtotal = subtotal + item;
+        console.log(subtotal);
+        console.log(item);
+    })
 
-    console.log(onAdd);
+    const taxPrice = subtotal* 0.12;
+    const totalPrice = subtotal + taxPrice;
+    console.log (itemsPrice);
+    console.log (taxPrice);
+    console.log (totalPrice);
+
+    console.log(props);
    
     return (
         <section className="cart">
             <div className="items">
 <img alt="this is a cart" src="./cart.png"></img>
-<h1>2<span>items</span></h1>
 </div>
 <div>
     {cartItems.length === 0 && <div>Order is empty</div>}
 </div>
+<div className="itemsHolder">
 {cartItems.map((item) => (
     <BasketItem
-    key = {item.id}
+    key={item.id}
     {...item}
     {...onAdd}
     {...onRemove}/>
 ))}
+</div>
 <div className="extra">
 <input type="text"></input>
 </div>
 
-
 <div className="total">
-{/* <h2>Total:</h2> */}
+{cartItems.length !== 0 && (
+    <>
+    <hr></hr>
+    <div className="row">
+    <div className="col1">Items Price</div>
+    <div className="col2">{subtotal}dkk</div>
+    </div>
+
+    <div className="row">
+    <div className="col1">Tax Price</div>
+    <div className="col2">{taxPrice}dkk</div>
+    </div>
+
+    <div className="row">
+    <div className="col1"><strong>Total</strong></div>
+    <div className="col2">{totalPrice}dkk</div>
+    </div>
+    </>
+)}
 </div>
         </section>
     )
