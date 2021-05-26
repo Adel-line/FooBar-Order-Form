@@ -61,7 +61,8 @@ function clickedminus (){
 }
   return (
     <div className="App">
-      <Template amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>
+      <Template amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
+      <Form amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
       <div className="change-page">
           <button onClick={clicked} > click me for more! </button>
             {amount}
@@ -80,13 +81,45 @@ function Template(props) {
   if (props.amount === 1) {
     return (
       <div>
-      <Welcome />
-      <section className="base">
-        <div className="box">
-          <Tables />
-          <button className="Button">Proceed with order</button>
-        </div>
-      </section>
+        <Welcome />
+      </div>
+      )
+  }else if (props.amount === 2){
+    const onAdd = props.onAdd;
+    const onRemove = props.onRemove;
+    return(
+      <div>
+        <BeerList onAdd ={onAdd} onRemove = {onRemove} beers = {props.beers} /> 
+      </div>      
+    )
+  }else{
+    return(
+      <div>
+        <Welcome />
+      </div>
+    )
+  }
+}
+
+function Form (props) {
+  return(
+    <section className="base">
+      <div className="box">
+        <form>
+          <Fieldset {...props}/>
+        </form>
+      </div>
+    </section>
+  )
+}
+
+function Fieldset (props) {
+  console.log(props);
+  if (props.amount === 1) {
+    return (
+      <div>
+        <Tables />
+        <button className="Button">Proceed with order</button>
       </div>
       )
   }else if (props.amount === 2){
@@ -94,28 +127,17 @@ function Template(props) {
     const onAdd = props.onAdd;
     const onRemove = props.onRemove;
     return(
-      <div>
-        
-      <BeerList onAdd ={onAdd} onRemove = {onRemove} beers = {props.beers} /> 
-      <section className="base">
-        <div className="box">
-        <Basket onAdd ={onAdd} onRemove= {onRemove} cartItems={cartItems}/>
-        {/* <Ordering /> */}
-        <button className="Button">payment</button>
+        <div>
+          <Basket onAdd ={onAdd} onRemove= {onRemove} cartItems={cartItems}/>
+            {/* <Ordering /> */}
+          <button className="Button">payment</button>
         </div>
-      </section>
-      </div>      
     )
   }else{
     return(
       <div>
-      <Welcome />
-      <section className="base">
-        <div className="box">
         <Payment/>
         <button className="Button">Pay</button>
-        </div>
-      </section>
       </div>
     )
   }
