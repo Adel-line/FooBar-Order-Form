@@ -7,7 +7,7 @@ export default function Tables() {
     // }
 
     return (
-      <section className="Form">
+      <fieldset className="Form">
           {/* <OrderNum /> */}
           <p className="TablesOrder">Order no. 12345</p>
           <p className="TablesHeader">Select your table:</p>
@@ -82,7 +82,7 @@ export default function Tables() {
            {/* <span>
                <input className="Button" type="Submit" value="Proceed with order"></input>
            </span> */}
-      </section>
+      </fieldset>
     );
     
   }
