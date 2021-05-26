@@ -1,7 +1,7 @@
 export default function Tables() {
     // $("input[type='radio'][name='table']:checked").value;
     // const t = document.querySelector('input[name="table"]:checked').value;
-    console.log(t);
+    // console.log(t);
     // if (t == "0") {
     
     // }
