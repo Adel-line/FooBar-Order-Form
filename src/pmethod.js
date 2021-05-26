@@ -1,11 +1,11 @@
+import CreditCardInput from 'react-credit-card-input';
 
 export default function Pmethod (props) {
     console.log(props.methodP);
     if(props.methodP==="Credit card") {
         return (
             <div>
-                <p>pp</p>
-                <input></input>
+                <CreditCardInput/>
             </div>
         )
     }else if(props.methodP==="cash") {

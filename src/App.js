@@ -3,8 +3,8 @@ import {useState} from "react";
 
 // import Ordering from "./Ordering";
 import BeerList from './BeerList';
-import Payment from "./Payment";
-import Tables from "./Tables";
+import Payment from "./payment";
+import Tables from "./tables";
 import Basket from './Basket';
 import Welcome from './Welcome';
 
