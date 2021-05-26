@@ -1,9 +1,8 @@
-export default function Tables() {
+export default function Tables(props) {
     // $("input[type='radio'][name='table']:checked").value;
     // const t = document.querySelector('input[name="table"]:checked').value;
     // console.log(t);
     // if (t == "0") {
-    
     // }
 
     return (
@@ -15,21 +14,21 @@ export default function Tables() {
             <div className="TablesGrid">
                 <div className="Table">
                     <label>
-                        <input type="radio" id="table1" name="table" value="table1"></input>
+                        <input type="radio" id="table1" name="table" value="table1" checked={props.selectedT === "table1"} onChange={ () => props.setSelectedT("table1") } ></input>
                         <img  className="TableRow1 Img1Collum1" alt="Table1" src="./Images/tableS@2x.png"></img>
                         <div className="TablesText">1</div> 
                     </label> 
                 </div>
                 <div className="Table">
                     <label>
-                        <input type="radio" id="table2" name="table" value="table2"></input>
+                        <input type="radio" id="table2" name="table" value="table2" checked={props.selectedT === "table2"} onChange={ () => props.setSelectedT("table2") }></input>
                         <img  className="TableRow1 Img1Collum2" alt="Table1" src="./Images/tableS@2x.png"></img>
                         <div className="TablesText">2</div>
                     </label>
                 </div>
                 <div className="Table">
                     <label>
-                        <input type="radio" id="table3" name="table" value="table3"></input>
+                        <input type="radio" id="table3" name="table" value="table3" checked={props.selectedT === "table3"} onChange={ () => props.setSelectedT("table3") }></input>
                         <img  className="TableRow1 Img1Collum3" alt="Table1" src="./Images/tableS@2x.png"></img>
                         <div className="TablesText">3</div>
                     </label>

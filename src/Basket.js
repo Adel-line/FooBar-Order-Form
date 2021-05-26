@@ -10,67 +10,62 @@ export default function Basket(props) {
     let subtotal = 0;
     cartItems.forEach((item) => {
     let itemName = ( item.price * item.amount);
-    console.log(itemName);
+
     itemsPrice.push(itemName);
     }
     );
 
     itemsPrice.forEach((item) => {
         subtotal = subtotal + item;
-        console.log(subtotal);
-        console.log(item);
+
     })
 
     const taxPrice = subtotal* 0.12;
     const totalPrice = subtotal + taxPrice;
-    console.log (itemsPrice);
-    console.log (taxPrice);
-    console.log (totalPrice);
 
-    console.log(props);
    
     return (
         <section className="cart">
             <div className="items">
-<img alt="this is a cart" src="./cart.png"></img>
-</div>
-<div>
-    {cartItems.length === 0 && <div>Order is empty</div>}
-</div>
-<div className="itemsHolder">
-{cartItems.map((item) => (
-    <BasketItem
-    key={item.id}
-    {...item}
-    {...onAdd}
-    {...onRemove}/>
-))}
-</div>
-<div className="extra">
-<input type="text"></input>
-</div>
+                <img alt="this is a cart" src="./cart.png"></img>
+            </div>
+            <div>
+                {cartItems.length === 0 && <div>Order is empty</div>}
+            </div>
+            <div className="itemsHolder">
+                {cartItems.map((item) => (
+                    <BasketItem
+                    key={item.id}
+                    {...item}
+                    {...onAdd}
+                    {...onRemove}/>
+                ))}
+            </div>
+            <div className="extra">
+                <input type="text"></input>
+            </div>
 
-<div className="total">
-{cartItems.length !== 0 && (
-    <>
-    <hr></hr>
-    <div className="row">
-    <div className="col1">Items Price</div>
-    <div className="col2">{subtotal}dkk</div>
-    </div>
+            <div className="total">
+                {cartItems.length !== 0 && (
+                    <>
+                        <hr></hr>
+                        <div className="row">
+                            <div className="col1">Items Price</div>
+                            <div className="col2">{subtotal}dkk</div>
+                        </div>
 
-    <div className="row">
-    <div className="col1">Tax Price</div>
-    <div className="col2">{taxPrice}dkk</div>
-    </div>
+                        <div className="row">
+                            <div className="col1">Tax Price</div>
+                            <div className="col2">{taxPrice}dkk</div>
+                        </div>
 
-    <div className="row">
-    <div className="col1"><strong>Total</strong></div>
-    <div className="col2">{totalPrice}dkk</div>
-    </div>
-    </>
-)}
-</div>
+                        <div className="row">
+                            <div className="col1"><strong>Total</strong></div>
+                            <div className="col2">{totalPrice}dkk</div>
+                        </div>
+                    </>
+                )}
+            </div>
         </section>
     )
 

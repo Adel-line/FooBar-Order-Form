@@ -1,8 +1,8 @@
 import Beer from './Beer';
 export default function BeerList(props) {
-  console.log(props);
+
   const onAdd = props.onAdd;
-  console.log(props);
+
   return (
   <div className="mainS">
     <section className="beerbox">

@@ -9,8 +9,8 @@ console.log(props);
 <p className="pName">{props.name}</p>
 <p className="pQuant">{props.amount} x {props.price}</p>
 <div>
-<button onClick={() => onAdd(props)} className="add">+</button>
-<button onClick={() => onRemove(props)} className="add">-</button>
+<button type="button" onClick={() => onAdd(props)} className="add">+</button>
+<button type="button" onClick={() => onRemove(props)} className="add">-</button>
 </div>
         </div>
     )

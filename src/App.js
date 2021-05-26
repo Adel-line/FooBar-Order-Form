@@ -17,14 +17,13 @@ const [cartItems, setCartItems] = useState([]);
 const [amount, setAmout] = useState(1);
 
 const onAdd = (beer) => {
-  console.log(beer);
-  //const available = cartItems.findIndex((x) => x.name === beers.name);
+  console.log(beer,cartItems);
   if (cartItems.findIndex((x) => x.id === beer.id) === -1) {
     
     const newcartItems = {...beer};
     newcartItems.amount = 1 ;
     setCartItems((newProd) => [...newProd, newcartItems]);
-
+    console.log("not found");
   } else{
     const newItem = cartItems.map((item) => {
        if (item.id === beer.id ) {
@@ -37,26 +36,6 @@ const onAdd = (beer) => {
      setCartItems(newItem);
   }
   console.log(cartItems);
-//   if (available) {
-//     const newItem = cartItems.map((item) => {
-//       if (item.id === beers.id ) {
-//         item.amount += 1;
-//       }
-//       return (
-//         item
-//       )
-//     });
-
-//     setCartItems(newItem);
-
-
-// // setCartItems(cartItems.map((x) => x.name === beers.id? {...available, qty: available.qty +1} :x));
-//   }
-//   else {
-//     setCartItems((newProd) => [...newProd, beers]);
-
-//   }
-
 }
 
 const onRemove = (beers) => {
@@ -135,11 +114,12 @@ function Template(props) {
 }
 
 function Form (props) {
+  const [selectedT ,setSelectedT] = useState(null);
   return(
     <section className="base">
       <div className="box">
         <form>
-          <Fieldset {...props}/>
+          <Fieldset {...props} selectedT={selectedT} setSelectedT={setSelectedT}  />
         </form>
       </div>
     </section>
@@ -151,7 +131,7 @@ function Fieldset (props) {
   if (props.amount === 1) {
     return (
       <div>
-        <Tables />
+        <Tables selectedT={props.selectedT} setSelectedT={props.setSelectedT} />
         <button className="Button">Proceed with order</button>
       </div>
       )
