@@ -94,30 +94,26 @@ function closeModal() {
 // POPULATE MODAL 
 
 const [info, setInfos] = useState([]);
-
-function GetBeerInfo() {
+const [infoSelected, setInfoSelected] = useState();
 
 useEffect(() => {
   fetch("https://beer-bar.herokuapp.com/beertypes")
   .then((res) => res.json())
   .then((data) => {
     setInfos(data);
-    console.log(info);
   });
 } ,[]);
-};
+
 
 // MAIN RETURN FROM APP
 
   return (
     <div className="App">
 
-      <Template amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}  openModal={openModal} />
-      <Form  openModal={openModal} GetBeerInfo={GetBeerInfo} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
-      <Modal info = {info} closeModal={closeModal} />
+      <Template setInfoSelected={setInfoSelected} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}  openModal={openModal} />
+      <Form  openModal={openModal} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}Clicked={Clicked}  />
+      <Modal info = {info} closeModal={closeModal} infoSelected={infoSelected} />
 
-      <Template amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
-      <Form amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} Clicked={Clicked} />
 
       <div className="change-page">
           <button onClick={Clicked} > click me for more! </button>
@@ -144,9 +140,11 @@ function Template(props) {
     const onAdd = props.onAdd;
     const onRemove = props.onRemove;
     const openModal = props.openModal;
+    const setInfoSelected = props.setInfoSelected ;
+    console.log(setInfoSelected);
     return(
       <div>
-        <BeerList openModal={openModal} onAdd ={onAdd} onRemove = {onRemove} beers = {props.beers} /> 
+        <BeerList setInfoSelected={setInfoSelected} openModal={openModal} onAdd ={onAdd} onRemove = {onRemove} beers = {props.beers} /> 
       </div>      
     )
   }else{

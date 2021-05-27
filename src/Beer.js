@@ -4,7 +4,9 @@ export default function Beer(props) {
  
  const onAdd = props.onAdd;
  const openModal = props.openModal;
- console.log(openModal);
+ const setInfoSelected = props.setInfoSelected;
+
+ console.log(setInfoSelected);
 
     return (
       <section className="tagbox">
