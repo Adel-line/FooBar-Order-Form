@@ -97,6 +97,39 @@ fieldset {
   position: relative;
 } */
 
+/* MODAL */
+
+.container {
+  position: absolute;
+  display: none;
+  width: 100vw;
+  height: 100vw;
+  background-color: #34353544;
+}
+
+.modal {
+  position: relative;
+  top: 5vw;
+  left: 25vw;
+  width: 50vw;
+  height: 40vw;
+  background-color: #eee5c6;
+  overflow-y: scroll;
+  z-index: 10;
+  border-radius: 1vw;
+}
+
+#close {
+  position: relative;
+  top: 1.5vw;
+  left: -22vw;
+  width: 2vw;
+  height: 2vw;
+  background-color: #eee5c6;
+  border-radius: 2vw;
+  border: 0.2vw solid #0b2626;
+}
+
 /* BUTTON */
 .Button {
   border: transparent;

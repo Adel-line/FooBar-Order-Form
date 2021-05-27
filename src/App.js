@@ -1,5 +1,6 @@
 import './App.css';
-import {useState} from "react";
+import {useState ,useEffect} from "react";
+
 
 // import Ordering from "./Ordering";
 import BeerList from './BeerList';
@@ -7,6 +8,7 @@ import Payment from "./Payment";
 import Tables from "./Tables";
 import Basket from './Basket';
 import Welcome from './Welcome';
+import Modal from "./Modal";
 
 
 function App() {
@@ -15,6 +17,8 @@ const beers = [ {id:"1", name:'HoppilyEverAfter', price: 20, key:"1" }, {id:"2",
 
 const [cartItems, setCartItems] = useState([]);
 const [amount, setAmount] = useState(1);
+
+// ADD PRODUCTS ON CART
 
 const onAdd = (beer) => {
   console.log(beer,cartItems);
@@ -37,6 +41,8 @@ const onAdd = (beer) => {
   }
   console.log(cartItems);
 }
+
+// REMOVE PRODUCTS FROM CART
 
 const onRemove = (beers) => {
   const available = cartItems.find(x => x.key === beers.key);
@@ -72,10 +78,42 @@ function ClickedMinus (){
    } );
 }
 
+// MODAL FUNCTIONS 
+
+const modal = document.querySelector(".container");
+  document.querySelectorAll(".moreinfo").forEach( yes => {yes.addEventListener('click', openModal)});
+
+function openModal() {
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    modal.style.display = 'none';
+}
+
+// POPULATE MODAL 
+
+const [info, setInfos] = useState([]);
+
+function GetBeerInfo() {
+
+useEffect(() => {
+  fetch("https://beer-bar.herokuapp.com/beertypes")
+  .then((res) => res.json())
+  .then((data) => {
+    setInfos(data);
+    console.log(info);
+  });
+} ,[]);
+};
+
+// MAIN RETURN FROM APP
+
   return (
     <div className="App">
-      <Template amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
-      <Form amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
+      <Template amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}  openModal={openModal} />
+      <Form  openModal={openModal} GetBeerInfo={GetBeerInfo} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
+      <Modal info = {info} closeModal={closeModal} />
       <div className="change-page">
           <button onClick={Clicked} > click me for more! </button>
             {amount}
@@ -84,7 +122,7 @@ function ClickedMinus (){
 
     </div>
   );
-;
+
 }
 
 export default App;
@@ -100,9 +138,10 @@ function Template(props) {
   }else if (props.amount === 2){
     const onAdd = props.onAdd;
     const onRemove = props.onRemove;
+    const openModal = props.openModal;
     return(
       <div>
-        <BeerList onAdd ={onAdd} onRemove = {onRemove} beers = {props.beers} /> 
+        <BeerList openModal={openModal} onAdd ={onAdd} onRemove = {onRemove} beers = {props.beers} /> 
       </div>      
     )
   }else{

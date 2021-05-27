@@ -3,6 +3,8 @@ import React from 'react';
 export default function Beer(props) {
  
  const onAdd = props.onAdd;
+ const openModal = props.openModal;
+ console.log(openModal);
 
     return (
       <section className="tagbox">
@@ -12,7 +14,7 @@ export default function Beer(props) {
     <p>{props.price}</p>
     </div>
     <div className="info2">
-    <button>Read more</button>
+    <button onClick={openModal} className="moreinfo">Read more</button>
     <button onClick={() => onAdd(props)}>+</button>
     </div>
         </section>
