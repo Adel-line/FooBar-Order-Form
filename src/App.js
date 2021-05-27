@@ -47,7 +47,7 @@ const onRemove = (beers) => {
   }
 }
 
-function Clicked (){
+function Clicked() {
   console.log("haha lol");
   setAmount((prevState) => {
     if (prevState===3){
@@ -59,7 +59,7 @@ function Clicked (){
     // return prevState+1
    } );
 }
-function ClickedMinus (){
+function ClickedMinus() {
   console.log("haha lol");
   setAmount((prevState) => {
     if (!prevState){
@@ -75,7 +75,7 @@ function ClickedMinus (){
   return (
     <div className="App">
       <Template amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
-      <Form amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
+      <Form amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} Clicked={Clicked} />
       <div className="change-page">
           <button onClick={Clicked} > click me for more! </button>
             {amount}
@@ -120,7 +120,7 @@ function Form (props) {
     <section className="base">
       <div className="box">
         <form>
-          <Fieldset {...props} selectedT={selectedT} setSelectedT={setSelectedT}  />
+          <Fieldset {...props} selectedT={selectedT} setSelectedT={setSelectedT} Clicked={props.Clicked} />
         </form>
       </div>
     </section>
@@ -129,11 +129,66 @@ function Form (props) {
 
 function Fieldset (props) {
   console.log(props);
+
+  function checkValidityPart1() {
+    const tableChoice = document.querySelectorAll(".tableChoice");
+    let validity = "";
+
+    tableChoice.forEach (t => {
+      if (t.checked) {
+        validity = true;
+      }
+    })
+
+    if (validity) {
+      console.log("Valid - Proceed with order");
+      props.Clicked();
+    } else {
+      console.log("Invalid");
+    }
+  }
+  
+  /* function CheckValidityPart2() {
+    const .... = document.querySelectorAll("....");
+    let validity = "";
+
+    ....forEach (... => {
+      if (....checked) {
+        validity = true;
+      }
+    })
+
+    if (validity) {
+      console.log("Valid - Payment");
+      props.Clicked();
+    } else {
+      console.log("Invalid");
+    }
+  } */
+  
+  /* function CheckValidityPart3() {
+    const .... = document.querySelectorAll("....");
+    let validity = "";
+
+    ....forEach (... => {
+      if (....checked) {
+        validity = true;
+      }
+    })
+
+    if (validity) {
+      console.log("Valid - Pay");
+      props.Clicked();
+    } else {
+      console.log("Invalid");
+    }
+  } */
+
   if (props.amount === 1) {
     return (
       <div>
         <Tables selectedT={props.selectedT} setSelectedT={props.setSelectedT} />
-        <button type="button" className="Button">Proceed with order</button>
+        <button onClick={checkValidityPart1} type="button" className="Button">Proceed with order</button>
       </div>
       )
   }else if (props.amount === 2){
@@ -155,4 +210,5 @@ function Fieldset (props) {
       </div>
     )
   }
+
 }
