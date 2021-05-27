@@ -153,7 +153,7 @@ function Fieldset (props) {
     let validity = "";
 
     ....forEach (... => {
-      if (....checked) {
+      if (....) {
         validity = true;
       }
     })
@@ -171,7 +171,7 @@ function Fieldset (props) {
     let validity = "";
 
     ....forEach (... => {
-      if (....checked) {
+      if (....) {
         validity = true;
       }
     })
