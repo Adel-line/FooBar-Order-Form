@@ -83,6 +83,11 @@ body {
   font-weight: 300;
 }
 
+/* FIELDSET */
+fieldset {
+  border-style: hidden;
+}
+
 /* FORM */
 /* .Form {
   background-color: #e3b449;
@@ -110,8 +115,8 @@ body {
 [type="radio"] {
   position: absolute;
   opacity: 0;
-  width: 0;
-  height: 0;
+  width: 2vw;
+  height: 2vw;
 }
 
 /* IMAGE STYLES */
@@ -151,6 +156,7 @@ body {
   color: #ffffff;
   z-index: 10;
   position: relative;
+  font-size: 1.5vw;
 }
 
 .TablesOrder {
@@ -173,32 +179,32 @@ body {
 
 .Img1Collum1 {
   left: 0.8vw;
-  top: -2vw;
+  top: -1.6vw;
 }
 
 .Img1Collum2 {
   left: 0.8vw;
-  top: -2vw;
+  top: -1.6vw;
 }
 
 .Img1Collum3 {
   left: 0.8vw;
-  top: -2vw;
+  top: -1.6vw;
 }
 
 .Img2Collum1 {
   left: 0.3vw;
-  top: -2.4vw;
+  top: -2.2vw;
 }
 
 .Img2Collum2 {
   left: 0.3vw;
-  top: -2.4vw;
+  top: -2.2vw;
 }
 
 .Img2Collum3 {
   left: 0.3vw;
-  top: -2.4vw;
+  top: -2.2vw;
 }
 
 .TableRow1 {
@@ -231,11 +237,8 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 2vw;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
-
 
 .total {
   position: relative;
@@ -315,12 +318,12 @@ p {
 #details {
   display: flex;
   justify-content: space-between;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 0.5vw;
   align-items: baseline;
 }
 
-#details button{
+#details button {
   border-radius: 15vw;
   background-color: rgb(218, 138, 35);
   margin-right: 1vw;

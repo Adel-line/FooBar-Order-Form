@@ -14,7 +14,7 @@ function App() {
 const beers = [ {id:"1", name:'HoppilyEverAfter', price: 20, key:"1" }, {id:"2", name:'Row26', price: 40, key:"2"}, {id:"3", name:'GitHop', price: 20, key:"3"}, {id:"4", name: 'Sleighride', price:20, key:"4"}, {id:"5", name:'Mowintime', price:30, key:"5"}, {id:"6", name:'ElHefe', price: 40, key:"6"}, {id:"7", name:'FairyTaleAle', price:20, key:"7"}, {id:"8", name:'HollabackLager', price: 30, key:"8"}, {id:"9", name:'RuinedChildhood', price: 30, key:"9"}];
 
 const [cartItems, setCartItems] = useState([]);
-const [amount, setAmout] = useState(1);
+const [amount, setAmount] = useState(1);
 
 const onAdd = (beer) => {
   console.log(beer,cartItems);
@@ -47,9 +47,9 @@ const onRemove = (beers) => {
   }
 }
 
-function clicked (){
+function Clicked (){
   console.log("haha lol");
-  setAmout((prevState) => {
+  setAmount((prevState) => {
     if (prevState===3){
       return prevState
 
@@ -59,9 +59,9 @@ function clicked (){
     // return prevState+1
    } );
 }
-function clickedminus (){
+function ClickedMinus (){
   console.log("haha lol");
-  setAmout((prevState) => {
+  setAmount((prevState) => {
     if (!prevState){
       return prevState
 
@@ -71,14 +71,15 @@ function clickedminus (){
     
    } );
 }
+
   return (
     <div className="App">
       <Template amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
       <Form amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
       <div className="change-page">
-          <button onClick={clicked} > click me for more! </button>
+          <button onClick={Clicked} > click me for more! </button>
             {amount}
-          <button onClick={clickedminus} > click me for less! </button>
+          <button onClick={ClickedMinus} > click me for less! </button>
       </div>
 
     </div>
@@ -132,7 +133,7 @@ function Fieldset (props) {
     return (
       <div>
         <Tables selectedT={props.selectedT} setSelectedT={props.setSelectedT} />
-        <button className="Button">Proceed with order</button>
+        <button type="button" className="Button">Proceed with order</button>
       </div>
       )
   }else if (props.amount === 2){
@@ -143,14 +144,14 @@ function Fieldset (props) {
         <div>
           <Basket onAdd ={onAdd} onRemove= {onRemove} cartItems={cartItems}/>
             {/* <Ordering /> */}
-          <button className="Button">payment</button>
+          <button type="button" className="Button">payment</button>
         </div>
     )
   }else{
     return(
       <div>
         <Payment/>
-        <button className="Button">Pay</button>
+        <button type="button" className="Button">Pay</button>
       </div>
     )
   }

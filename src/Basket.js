@@ -37,8 +37,8 @@ export default function Basket(props) {
                     <BasketItem
                     key={item.id}
                     {...item}
-                    {...onAdd}
-                    {...onRemove}/>
+                    onAdd={onAdd}
+                    onRemove={onRemove}/>
                 ))}
             </div>
             <div className="extra">
