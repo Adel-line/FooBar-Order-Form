@@ -17,8 +17,13 @@ const beers = [ {id:"1", name:'HoppilyEverAfter', price: 20, key:"1" }, {id:"2",
 
 const [cartItems, setCartItems] = useState([]);
 const [amount, setAmount] = useState(1);
+const [readM , setReadM] = useState("");
+const [info, setInfos] = useState([]);
+const [infoSelected, setInfoSelected] = useState();
+const [selectedT ,setSelectedT] = useState(null);
 
-// ADD PRODUCTS ON CART
+
+// ADD PRODUCTS ON CART ADD PRODUCTS ON CART ADD PRODUCTS ON CART ADD PRODUCTS ON CART ADD PRODUCTS ON CART ADD PRODUCTS ON CART
 
 const onAdd = (beer) => {
   console.log(beer,cartItems);
@@ -27,7 +32,7 @@ const onAdd = (beer) => {
     const newcartItems = {...beer};
     newcartItems.amount = 1 ;
     setCartItems((newProd) => [...newProd, newcartItems]);
-    console.log("not found");
+    console.log("not found");   
   } else{
     const newItem = cartItems.map((item) => {
        if (item.id === beer.id ) {
@@ -42,7 +47,7 @@ const onAdd = (beer) => {
   console.log(cartItems);
 }
 
-// REMOVE PRODUCTS FROM CART
+// REMOVE PRODUCTS FROM CART REMOVE PRODUCTS FROM CART REMOVE PRODUCTS FROM CART REMOVE PRODUCTS FROM CART REMOVE PRODUCTS FROM CART REMOVE PRODUCTS FROM CART
 
 const onRemove = (beers) => {
   const available = cartItems.find(x => x.key === beers.key);
@@ -54,7 +59,7 @@ const onRemove = (beers) => {
 }
 
 function Clicked() {
-  console.log("haha lol");
+
   setAmount((prevState) => {
     if (prevState===3){
       return prevState
@@ -62,11 +67,10 @@ function Clicked() {
     }else{
       return prevState+1
     }
-    // return prevState+1
    } );
 }
 function ClickedMinus() {
-  console.log("haha lol");
+
   setAmount((prevState) => {
     if (!prevState){
       return prevState
@@ -78,23 +82,24 @@ function ClickedMinus() {
    } );
 }
 
-// MODAL FUNCTIONS 
+// MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS 
 
 const modal = document.querySelector(".container");
-  document.querySelectorAll(".moreinfo").forEach( yes => {yes.addEventListener('click', openModal)});
 
-function openModal() {
+
+function openModal(item) {
+    setReadM(item.name);
     modal.style.display = 'block';
 }
 
 function closeModal() {
     modal.style.display = 'none';
+    
 }
 
-// POPULATE MODAL 
+// POPULATE MODAL  POPULATE MODAL  POPULATE MODAL  POPULATE MODAL  POPULATE MODAL  POPULATE MODAL  POPULATE MODAL  POPULATE MODAL  POPULATE MODAL 
 
-const [info, setInfos] = useState([]);
-const [infoSelected, setInfoSelected] = useState();
+
 
 useEffect(() => {
   fetch("https://beer-bar.herokuapp.com/beertypes")
@@ -105,14 +110,15 @@ useEffect(() => {
 } ,[]);
 
 
-// MAIN RETURN FROM APP
+// MAIN RETURN FROM APP  MAIN RETURN FROM APP  MAIN RETURN FROM APP  MAIN RETURN FROM APP  MAIN RETURN FROM APP 
+
 
   return (
     <div className="App">
 
-      <Template setInfoSelected={setInfoSelected} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}  openModal={openModal} />
-      <Form  openModal={openModal} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}Clicked={Clicked}  />
-      <Modal info = {info} closeModal={closeModal} infoSelected={infoSelected} />
+      <Template  setInfoSelected={setInfoSelected} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}  openModal={openModal} />
+      <Form  selectedT={selectedT} setSelectedT={setSelectedT} openModal={openModal} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}Clicked={Clicked}  />
+      <Modal readM={readM} info = {info} closeModal={closeModal} infoSelected={infoSelected} />
 
 
       <div className="change-page">
@@ -128,8 +134,11 @@ useEffect(() => {
 
 export default App;
 
+
+
+
 function Template(props) {
-  console.log(props);
+
   if (props.amount === 1) {
     return (
       <div>
@@ -141,10 +150,10 @@ function Template(props) {
     const onRemove = props.onRemove;
     const openModal = props.openModal;
     const setInfoSelected = props.setInfoSelected ;
-    console.log(setInfoSelected);
+
     return(
       <div>
-        <BeerList setInfoSelected={setInfoSelected} openModal={openModal} onAdd ={onAdd} onRemove = {onRemove} beers = {props.beers} /> 
+        <BeerList  setInfoSelected={setInfoSelected} openModal={openModal} onAdd ={onAdd} onRemove = {onRemove} beers = {props.beers} /> 
       </div>      
     )
   }else{
@@ -156,22 +165,26 @@ function Template(props) {
   }
 }
 
+
+
+
 function Form (props) {
-  const [selectedT ,setSelectedT] = useState(null);
+
   return(
     <section className="base">
       <div className="box">
         <form>
-          <Fieldset {...props} selectedT={selectedT} setSelectedT={setSelectedT} Clicked={props.Clicked} />
+          <Fieldset {...props} selectedT={props.selectedT} setSelectedT={props.setSelectedT} Clicked={props.Clicked} />
         </form>
       </div>
     </section>
   )
 }
 
-function Fieldset (props) {
-  console.log(props);
 
+
+
+function Fieldset (props) {
   function checkValidityPart1() {
     const tableChoice = document.querySelectorAll(".tableChoice");
     let validity = "";
@@ -190,15 +203,14 @@ function Fieldset (props) {
     }
   }
   
-  /* function CheckValidityPart2() {
-    const .... = document.querySelectorAll("....");
+  /*function CheckValidityPart2() {
     let validity = "";
 
-    ....forEach (... => {
-      if (....) {
+    
+    if (props.cartItems) {
         validity = true;
       }
-    })
+    
 
     if (validity) {
       console.log("Valid - Payment");

@@ -106,7 +106,9 @@ fieldset {
   height: 100vw;
   background-color: #34353544;
 }
-
+.modalImage{
+  width: 10vw;
+}
 .modal {
   position: relative;
   top: 5vw;

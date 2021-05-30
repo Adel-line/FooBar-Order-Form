@@ -4,9 +4,8 @@ export default function Beer(props) {
  
  const onAdd = props.onAdd;
  const openModal = props.openModal;
- const setInfoSelected = props.setInfoSelected;
+ /*const setInfoSelected = props.setInfoSelected;*/
 
- console.log(setInfoSelected);
 
     return (
       <section className="tagbox">
@@ -16,7 +15,8 @@ export default function Beer(props) {
     <p>{props.price}</p>
     </div>
     <div className="info2">
-    <button onClick={openModal} className="moreinfo">Read more</button>
+    <button onClick={() => openModal(props) }  className="moreinfo">Read more</button>
+
     <button onClick={() => onAdd(props)}>+</button>
     </div>
         </section>
