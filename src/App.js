@@ -21,6 +21,7 @@ const [readM , setReadM] = useState("");
 const [info, setInfos] = useState([]);
 const [infoSelected, setInfoSelected] = useState();
 const [selectedT ,setSelectedT] = useState(null);
+const [totalPrice  ,setTotalPrice] =useState("");
 
 
 // ADD PRODUCTS ON CART ADD PRODUCTS ON CART ADD PRODUCTS ON CART ADD PRODUCTS ON CART ADD PRODUCTS ON CART ADD PRODUCTS ON CART
@@ -118,7 +119,7 @@ useEffect(() => {
     <div className="App">
 
       <Template  setInfoSelected={setInfoSelected} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}  openModal={openModal} />
-      <Form  selectedT={selectedT} setSelectedT={setSelectedT} openModal={openModal} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}Clicked={Clicked}  />
+      <Form  totalPrice={totalPrice} setTotalPrice={setTotalPrice} selectedT={selectedT} setSelectedT={setSelectedT} openModal={openModal} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}Clicked={Clicked}  />
       <Modal readM={readM} info = {info} closeModal={closeModal} infoSelected={infoSelected} />
 
 
@@ -175,7 +176,7 @@ function Form (props) {
     <section className="base">
       <div className="box">
         <form>
-          <Fieldset {...props} selectedT={props.selectedT} setSelectedT={props.setSelectedT} Clicked={props.Clicked} />
+          <Fieldset totalPrice={props.totalPrice} setTotalPrice={props.setTotalPrice} {...props} selectedT={props.selectedT} setSelectedT={props.setSelectedT} Clicked={props.Clicked} />
         </form>
       </div>
     </section>
@@ -204,12 +205,14 @@ function Fieldset (props) {
     }
   }
   
-  /*function CheckValidityPart2() {
+  function CheckValidityPart2() {
     let validity = "";
-
+    const cartItems = props.cartItems;
     
-    if (props.cartItems) {
+    if (cartItems[0]) {
         validity = true;
+      }else{
+        console.log("no");
       }
     
 
@@ -219,7 +222,7 @@ function Fieldset (props) {
     } else {
       console.log("Invalid");
     }
-  } */
+  }
   
   /* function CheckValidityPart3() {
     const .... = document.querySelectorAll("....");
@@ -238,7 +241,7 @@ function Fieldset (props) {
       console.log("Invalid");
     }
   } */
-
+  const cartItems = props.cartItems;
   if (props.amount === 1) {
     return (
       <div>
@@ -247,20 +250,20 @@ function Fieldset (props) {
       </div>
       )
   }else if (props.amount === 2){
-    const cartItems = props.cartItems;
+    
     const onAdd = props.onAdd;
     const onRemove = props.onRemove;
     return(
         <div>
-          <Basket onAdd ={onAdd} onRemove= {onRemove} cartItems={cartItems}/>
+          <Basket  setTotalPrice={props.setTotalPrice} onAdd ={onAdd} onRemove= {onRemove} cartItems={cartItems}/>
             {/* <Ordering /> */}
-          <button type="button" className="Button">Payment</button>
+          <button onClick={CheckValidityPart2} type="button" className="Button">Payment</button>
         </div>
     )
   }else{
-    return(
+    return( 
       <div>
-        <Payment/>
+        <Payment  totalPrice={props.totalPrice} cartItems={cartItems} />
         <button type="button" className="Button">Pay</button>
       </div>
     )

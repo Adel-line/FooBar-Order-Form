@@ -377,7 +377,7 @@ box-shadow: -1px 3px 15px -3px #000000;
   margin-right: 0.3vw;
 }
 
-input {
+.extra input {
   border: transparent;
   background-color: #ffffff;
   margin-left: -7vw;
@@ -491,3 +491,33 @@ top: 0.5vw;
   font-size: 2vw;
 }
 
+/*PAyement */
+.payementInformation{
+  margin-top: 2vw;
+}
+.payementInformation > div{
+  display: grid;
+  margin-bottom: 1vw;
+}
+.payementLabel{
+  margin-bottom: 0.5vw;
+  text-align: left;
+  font-weight: 500;
+}
+
+
+.payementInformation input[type="text"] {
+  border: transparent;
+  background-color: #ffffff;
+  border-radius: 0.5vw;
+  width: 15vw;
+  height: 2vw;
+}
+
+.Totaling{
+  margin-top: 2vw;
+  background-color: #ffffff;
+  border-radius: 0.5vw;
+  width: 20vw;
+  height: 2vw
+}

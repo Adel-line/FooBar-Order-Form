@@ -1,6 +1,7 @@
 import React from 'react';
 import BasketItem from './BasketItem';
 
+
 export default function Basket(props) {
 
     const {cartItems, onAdd, onRemove} = props;
@@ -22,8 +23,11 @@ export default function Basket(props) {
 
     const taxPrice = subtotal* 0.12;
     const totalPrice = subtotal + taxPrice;
-
-   
+    totallPricing();
+    function totallPricing(){
+        props.setTotalPrice(totalPrice);
+    };
+    
     return (
         <section className="cart">
             <div className="items">
@@ -62,7 +66,7 @@ export default function Basket(props) {
 
                         <div className="row">
                             <div className="col1"><strong>Total</strong></div>
-                            <div className="col2">{totalPrice}dkk</div>
+                            <div className="col2"  >{totalPrice}dkk</div>
                         </div>
                     </>
                 )}
