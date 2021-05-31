@@ -69,6 +69,7 @@ function Clicked() {
     }
    } );
 }
+
 function ClickedMinus() {
 
   setAmount((prevState) => {
@@ -253,7 +254,7 @@ function Fieldset (props) {
         <div>
           <Basket onAdd ={onAdd} onRemove= {onRemove} cartItems={cartItems}/>
             {/* <Ordering /> */}
-          <button type="button" className="Button">payment</button>
+          <button type="button" className="Button">Payment</button>
         </div>
     )
   }else{

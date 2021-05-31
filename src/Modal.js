@@ -41,19 +41,29 @@ if (props.readM ) {
     }else if (props.readM === "Steampunk") {
         infoModale = info[9];
     }
+
+
 return (
     <div onClick = {outsideClick} className="container">
         <div className="modal ">
             <button onClick = {closeModal} id="close">X</button>
-            <h1>{infoModale.name}</h1>
-            <p>{infoModale.category}</p>
-            <h3>{infoModale.alc}</h3>
+            <div id="general">
+             <div id="titles">
+                <h1>{infoModale.name}</h1>
+                    <div id="cat">
+                    <h2>{infoModale.category}</h2>
+                    <h3>{infoModale.alc}</h3>
+                 </div>
+                 <p><span>OVERALL: </span>{infoModale.description.overallImpression}</p>
+             </div>
             <img className ="modalImage" src={infoModale.label} alt="label goes here"></img>
+            </div>
             <div className="description">
-            <p>{infoModale.description.aroma}</p>
-            <p>{infoModale.description.appearance}</p>
-            <p>{infoModale.description.mouthfeel}</p>
-            <p>{infoModale.description.overllImpression}</p>
+            <p><span>AROMA: </span>{infoModale.description.aroma}</p>
+            <p><span>APPEARANCE: </span>{infoModale.description.appearance}</p>
+            <p><span>MOUTHFEEL: </span>{infoModale.description.mouthfeel}</p>
+          
+
                 
             </div>
         </div>

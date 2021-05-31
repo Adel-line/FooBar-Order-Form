@@ -17,18 +17,35 @@ body {
   margin: auto;
 }
 
+/* TEXT STYLE */
+
+
+
+h2 {
+  font-size: 0.7vw;
+}
+
+p {
+  font-size: 0.8vw;
+  font-weight: 500;
+}
+
+span {
+  font-size: 1vw;
+  font-weight: 600;
+}
+
+
 .box {
   position: absolute;
   background-color: #e3b449;
-  /* width: 35vw;
-  height: 65vw; */
   height: 45vw;
   width: 25vw;
   border-radius: 2vw;
-  /* margin-left: 55vw; */
   right: 9vw;
-  /* margin-top: 2.5vw; */
   top: 4vw;
+  -webkit-box-shadow: -1px 3px 15px -3px #000000; 
+box-shadow: -1px 3px 15px -3px #000000;
 }
 
 .beerbox {
@@ -45,13 +62,9 @@ body {
   margin-top: 1vw;
   margin-bottom: 1vw;
   background-color: antiquewhite;
-
-  width: 10vw;
-}
-
-.labels {
-  height: 7vw;
-  width: 7vw;
+  height: 13vw;
+  width: 9.5vw;
+  border-radius: 0.2vw;
 }
 
 /* WELCOME */
@@ -88,15 +101,6 @@ fieldset {
   border-style: hidden;
 }
 
-/* FORM */
-/* .Form {
-  background-color: #e3b449;
-  width: 39vw;
-  height: 78vw;
-  border-radius: 2vw;
-  position: relative;
-} */
-
 /* MODAL */
 
 .container {
@@ -105,10 +109,15 @@ fieldset {
   width: 100vw;
   height: 100vw;
   background-color: #34353544;
+
 }
+
 .modalImage{
   width: 10vw;
+  margin-left: 15vw;
+  margin-top: 1.5vw;
 }
+
 .modal {
   position: relative;
   top: 5vw;
@@ -119,6 +128,8 @@ fieldset {
   overflow-y: scroll;
   z-index: 10;
   border-radius: 1vw;
+  -webkit-box-shadow: 3px 3px 24px -3px #000000; 
+  box-shadow: 3px 3px 24px -3px #000000;
 }
 
 #close {
@@ -127,23 +138,84 @@ fieldset {
   left: -22vw;
   width: 2vw;
   height: 2vw;
+  z-index: 10;
   background-color: #eee5c6;
   border-radius: 2vw;
   border: 0.2vw solid #0b2626;
 }
 
-/* BUTTON */
+#general {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 15vw;
+}
+
+
+#titles {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  justify-content: space-between;
+  width: 19vw;
+  height: 8vw;
+  left: 10vw;
+  top: 1vw;
+}
+
+#titles h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 2vw;
+  font-weight: 500;
+}
+
+#cat {
+  width: 10vw;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-around;
+  text-align: left;
+  margin-left: -1.5vw;
+}
+
+.description {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-between;
+  text-align: left;
+  padding: 3vw;
+}
+
+/* BUTTONS */
 .Button {
   border: transparent;
   border-radius: 1.5vw;
-  background-color: #afa188;
-  height: 4.5vw;
-  width: 100%;
+  background-color: #343535;
+  color: #eee5c6;
+  height: 3.5vw;
+  width: 70%;
   position: absolute;
-  bottom: 0vw;
-  left: 0vw;
-  font-weight: 800;
-  font-size: 1.5vw;
+  bottom: 1vw;
+  left: 3.5vw;
+  font-family: 'Segoe UI';
+  font-weight: 500;
+  font-size: 1.3vw;
+}
+
+button.moreinfo {
+  background-color: #e3b449;
+  border: 0.1vw solid #e3b449;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.8vw;
+  border-radius: 0.3vw;
+  color: rgb(2, 2, 54);
+  height: 1.5vw;
+  width: 6vw;
 }
 
 /* TABLES */
@@ -184,6 +256,8 @@ fieldset {
   grid-template-columns: repeat(3, 1fr);
   height: 20vw;
   width: 20vw;
+  -webkit-box-shadow: -1px 3px 15px -3px #000000; 
+  box-shadow: -1px 3px 15px -3px #000000;
 }
 
 .TablesText {
@@ -192,6 +266,7 @@ fieldset {
   z-index: 10;
   position: relative;
   font-size: 1.5vw;
+  text-align: center;
 }
 
 .TablesOrder {
@@ -262,7 +337,10 @@ fieldset {
   height: 6vw;
   z-index: 1;
 }
+
+
 /* ORDERING */
+
 .itemsHolder {
   height: 15vw;
   width: 23vw;
@@ -273,33 +351,46 @@ fieldset {
   flex-direction: column;
   margin-top: 2vw;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-box-shadow: -1px 3px 15px -3px #000000; 
+box-shadow: -1px 3px 15px -3px #000000;
 }
 
 .total {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 5.5vw;
+  -webkit-box-shadow: -1px 3px 15px -3px #000000; 
+box-shadow: -1px 3px 15px -3px #000000;
+  height: 7vw;
   width: 23vw;
   background-color: #ffffff;
   border-radius: 0.5vw;
+  top: 5vw;
 }
 
 .row {
   display: flex;
   justify-content: space-between;
   margin-top: 0.2vw;
+  padding: 0.3vw;
+  margin-left: 0.3vw;
+  margin-right: 0.3vw;
 }
 
-.Extra input {
+input {
   border: transparent;
   background-color: #ffffff;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: -7vw;
+  margin-top: 2vw;
   border-radius: 0.5vw;
-  width: 33vw;
-  height: 3.8vw;
+  width: 22vw;
+  height: 3.5vw;
 }
+
+input::placeholder {
+  color: grey;
+}
+
 
 .Item {
   display: grid;
@@ -313,7 +404,10 @@ fieldset {
 
 .labels {
   height: 9vw;
-  width: 9vw;
+  width: 9.5vw;
+  border-radius: 0.2vw;
+  -webkit-box-shadow: -1px 3px 3px -3px #000000; 
+box-shadow: -1px 3px 15px -3px #000000;
 }
 
 .info1 {
@@ -322,23 +416,16 @@ fieldset {
   justify-content: space-around;
   font-size: 0.7vw;
   margin-top: -0.8vw;
+  height: 2vw;
 }
 
 .info2 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: -0.6vw;
+  margin-top: 0.4vw;
 }
 
-h2 {
-  font-size: 0.7vw;
-}
-
-p {
-  font-size: 0.8vw;
-  font-weight: 500;
-}
 
 /* CART */
 .cart {
@@ -365,17 +452,20 @@ p {
 }
 
 .items {
+  position: relative;
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
+  align-items: center;
+  left: 9vw;
   height: 2vw;
-  width: 20.5vw;
-  margin-top: 0.5vw;
+  width: 6vw;
+top: 0.5vw;
 }
 
-.items img {
-  height: 2.2vw;
-  margin-top: 0.6vw;
-  margin-right: 0.5vw;
+.icon {
+  width: 2vw;
+  height: 2vw;
 }
 
 .addfield {
@@ -386,29 +476,6 @@ p {
   text-align: left;
   padding: 1vw;
   margin-top: 2vw;
-}
-
-.subtotal {
-  height: 3.5vw;
-  width: 20.5vw;
-  background-color: white;
-  border-radius: 0.5vw;
-  text-align: left;
-  padding: 1vw;
-  margin-top: 10vw;
-}
-
-.total {
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-  height: 5vw;
-  width: 20.5vw;
-  background-color: white;
-  border-radius: 0.5vw;
-  text-align: left;
-  padding: 1vw;
-  top: 7vw;
 }
 
 .paybtn {
@@ -424,11 +491,3 @@ p {
   font-size: 2vw;
 }
 
-input {
-  width: 20vw;
-  height: 2.3vw;
-  border-radius: 0.6vw;
-  border: 2px solid white;
-  margin-top: 1vw;
-  margin-right: 8vw;
-}

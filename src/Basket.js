@@ -27,7 +27,8 @@ export default function Basket(props) {
     return (
         <section className="cart">
             <div className="items">
-                <img alt="this is a cart" src="./cart.png"></img>
+                <h1>ORDER</h1>
+                <img alt="this is a cart" className="icon" src="./cart.png"></img>
             </div>
             <div>
                 {cartItems.length === 0 && <div>Order is empty</div>}
@@ -42,7 +43,7 @@ export default function Basket(props) {
                 ))}
             </div>
             <div className="extra">
-                <input type="text"></input>
+                <input type="text" placeholder="extra..."></input>
             </div>
 
             <div className="total">
