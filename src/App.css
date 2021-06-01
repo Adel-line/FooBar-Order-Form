@@ -225,6 +225,32 @@ button.moreinfo {
   width: 6vw;
 }
 
+/* .modal span {
+  display: block;
+} */
+
+/* Buttons TEXT To Speech */
+
+button.rs-play {
+ fill:#e3b449;
+  height: 2vw;
+  width: 2vw;
+}
+
+button.rs-stop {
+  fill:#e3b449;
+  height: 2vw;
+  width: 2vw;
+}
+
+button.rs-pause {
+  fill:#e3b449;
+  height: 2vw;
+  width: 2vw;
+}
+
+
+
 /* TABLES */
 [type="radio"] {
   position: absolute;

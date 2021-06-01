@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Speech from 'react-speech';
 
 export default function Modal(props) {
 
 const {closeModal} = props;
 const modal = document.querySelector(".container");
+
 
 const {info} = props;
 let infoModale = "" ;
@@ -43,7 +45,11 @@ if (props.readM ) {
     }
 
 
+//     const speechText = infoModale.description.aroma + infoModale.description.appearance + infoModale.description.mouthfeel;
+// console.log(speechText)
+
 return (
+
     <div onClick = {outsideClick} className="container">
         <div className="modal ">
             <button onClick = {closeModal} id="close">X</button>
@@ -54,6 +60,7 @@ return (
                     <h2>{infoModale.category}</h2>
                     <h3>{infoModale.alc}</h3>
                  </div>
+                 <Speech pitch="1" rate="0.9" volume="1.1" voice="Google UK English Male"  stop={true} pause={true} text={infoModale.description.overallImpression} />  
                  <p><span>OVERALL: </span>{infoModale.description.overallImpression}</p>
              </div>
             <img className ="modalImage" src={infoModale.label} alt="label goes here"></img>
@@ -67,7 +74,7 @@ return (
                 
             </div>
         </div>
-            
+        
     </div>
 ) 
 } else {
