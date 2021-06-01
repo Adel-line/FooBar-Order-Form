@@ -22,6 +22,7 @@ const [info, setInfos] = useState([]);
 const [infoSelected, setInfoSelected] = useState();
 const [selectedT ,setSelectedT] = useState(null);
 const [totalPrice  ,setTotalPrice] =useState("");
+const [extras , setExtras] = useState("");
 
 
 // ADD PRODUCTS ON CART ADD PRODUCTS ON CART ADD PRODUCTS ON CART ADD PRODUCTS ON CART ADD PRODUCTS ON CART ADD PRODUCTS ON CART
@@ -29,7 +30,6 @@ const [totalPrice  ,setTotalPrice] =useState("");
 const onAdd = (beer) => {
   console.log(beer,cartItems);
   if (cartItems.findIndex((x) => x.id === beer.id) === -1) {
-    
     const newcartItems = {...beer};
     newcartItems.amount = 1 ;
     setCartItems((newProd) => [...newProd, newcartItems]);
@@ -60,49 +60,37 @@ const onRemove = (beers) => {
 }
 
 function Clicked() {
-
   setAmount((prevState) => {
     if (prevState===3){
       return prevState
-
-    }else{
+    } else {
       return prevState+1
     }
-   } );
+   });
 }
 
 function ClickedMinus() {
-
   setAmount((prevState) => {
     if (!prevState){
       return prevState
-
-    }else{
+    } else {
       return prevState-1
     }
-    
-   } );
+   });
 }
 
 // MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS 
 
 const modal = document.querySelector(".container");
-
-
 function openModal(item) {
     setReadM(item.name);
     modal.style.display = 'block';
 }
-
 function closeModal() {
     modal.style.display = 'none';
-    
 }
 
 // POPULATE MODAL  POPULATE MODAL  POPULATE MODAL  POPULATE MODAL  POPULATE MODAL  POPULATE MODAL  POPULATE MODAL  POPULATE MODAL  POPULATE MODAL 
-
-
-
 useEffect(() => {
   fetch("https://beer-bar.herokuapp.com/beertypes")
   .then((res) => res.json())
@@ -111,17 +99,20 @@ useEffect(() => {
   });
 } ,[]);
 
+//Sending info to the data base
+
+function dataSending () {
+  const form = document.querySelector("form");
+  console.log(form.elements);
+}
 
 // MAIN RETURN FROM APP  MAIN RETURN FROM APP  MAIN RETURN FROM APP  MAIN RETURN FROM APP  MAIN RETURN FROM APP 
-
-
   return (
     <div className="App">
 
       <Template  setInfoSelected={setInfoSelected} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}  openModal={openModal} />
-      <Form  totalPrice={totalPrice} setTotalPrice={setTotalPrice} selectedT={selectedT} setSelectedT={setSelectedT} openModal={openModal} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}Clicked={Clicked}  />
-      <Modal readM={readM} info = {info} closeModal={closeModal} infoSelected={infoSelected} />
-
+      <Form extras={extras} setExtras={setExtras}  dataSending={ dataSending}  totalPrice={totalPrice} setTotalPrice={setTotalPrice} selectedT={selectedT} setSelectedT={setSelectedT} openModal={openModal} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}Clicked={Clicked}  />
+      <Modal readM={readM} info = {info} closeModal={closeModal} infoSelected={infoSelected} /> 
 
       <div className="change-page">
           <button onClick={Clicked} > click me for more! </button>
@@ -176,7 +167,7 @@ function Form (props) {
     <section className="base">
       <div className="box">
         <form>
-          <Fieldset totalPrice={props.totalPrice} setTotalPrice={props.setTotalPrice} {...props} selectedT={props.selectedT} setSelectedT={props.setSelectedT} Clicked={props.Clicked} />
+          <Fieldset  dataSending={ props.dataSending} extras={props.extras} setExtras={props.setExtras} totalPrice={props.totalPrice} setTotalPrice={props.setTotalPrice} {...props} selectedT={props.selectedT} setSelectedT={props.setSelectedT} Clicked={props.Clicked} />
         </form>
       </div>
     </section>
@@ -241,6 +232,10 @@ function Fieldset (props) {
       console.log("Invalid");
     }
   } */
+
+
+
+
   const cartItems = props.cartItems;
   if (props.amount === 1) {
     return (
@@ -255,7 +250,7 @@ function Fieldset (props) {
     const onRemove = props.onRemove;
     return(
         <div>
-          <Basket  setTotalPrice={props.setTotalPrice} onAdd ={onAdd} onRemove= {onRemove} cartItems={cartItems}/>
+          <Basket  setExtras={props.setExtras} setTotalPrice={props.setTotalPrice} onAdd ={onAdd} onRemove= {onRemove} cartItems={cartItems}/>
             {/* <Ordering /> */}
           <button onClick={CheckValidityPart2} type="button" className="Button">Payment</button>
         </div>
@@ -263,8 +258,8 @@ function Fieldset (props) {
   }else{
     return( 
       <div>
-        <Payment  totalPrice={props.totalPrice} cartItems={cartItems} />
-        <button type="button" className="Button">Pay</button>
+        <Payment  extras={props.extras} totalPrice={props.totalPrice} cartItems={cartItems} />
+        <button type="button" className="Button" onClick={props.dataSending}>Pay</button>
       </div>
     )
   }

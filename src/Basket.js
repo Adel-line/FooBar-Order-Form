@@ -21,12 +21,21 @@ export default function Basket(props) {
 
     })
 
-    const taxPrice = subtotal* 0.12;
+    let taxPrice = subtotal* 0.12;
     const totalPrice = subtotal + taxPrice;
+    taxPrice = Math.round( taxPrice );
     totallPricing();
     function totallPricing(){
         props.setTotalPrice(totalPrice);
     };
+
+    console.log(props);
+    function extraSeting () {
+        const exValeu = document.querySelector(".extra > input").value;
+        if (exValeu){
+            props.setExtras(exValeu);
+        }
+    }
     
     return (
         <section className="cart">
@@ -47,13 +56,12 @@ export default function Basket(props) {
                 ))}
             </div>
             <div className="extra">
-                <input type="text" placeholder="extra..."></input>
+                <input type="text" onChange={extraSeting} placeholder="extra..."></input>
             </div>
 
             <div className="total">
                 {cartItems.length !== 0 && (
                     <>
-                        <hr></hr>
                         <div className="row">
                             <div className="col1">Items Price</div>
                             <div className="col2">{subtotal}dkk</div>

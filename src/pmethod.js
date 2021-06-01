@@ -7,7 +7,7 @@ export default function Pmethod (props) {
             <div className="payementInformation ">
                 <h1>Payement Information</h1>
                 <div>
-                    <label className="payementLabel" for="namePayement">Full Name </label>
+                    <label className="payementLabel" htmlFor="namePayement">Full Name </label>
                     <input id="namePayement" type="text" placeholder="Jhon Doe"></input>
                 </div>
                 <div >
@@ -20,16 +20,15 @@ export default function Pmethod (props) {
         )
     }else if(props.methodP==="cash") {
         return (
-            <div>
-                <p>ph</p>
-                <input></input>
+            <div id="cashPaying">
+                <p>Please go the to the counter to pay, we will call you when order is ready .</p>
             </div>
         )
     }else  {
         return (
-            <div>
-                <p>hh</p>
-                <input></input>
+            <div id="mobilePaying">
+                <p>Mobile pay code:</p>
+                <strong>755566</strong>
             </div>
         )
     }
