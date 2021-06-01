@@ -52,10 +52,17 @@ box-shadow: -1px 3px 15px -3px #000000;
   background-color: #0b2626;
   position: absolute;
   width: 50vw;
+  height: 41vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin-left: 8vw;
   margin-top: 4.5vw;
+  overflow-y: scroll;
+}
+
+.notinStock{
+  pointer-events: none;
+  filter: grayscale(100%);
 }
 
 .tagbox {
@@ -429,6 +436,10 @@ box-shadow: -1px 3px 15px -3px #000000;
   margin-top: 0.4vw;
 }
 
+.info2 button{
+  cursor: pointer;
+}
+
 
 /* CART */
 .cart {
@@ -507,7 +518,9 @@ top: 0.5vw;
   text-align: left;
   font-weight: 500;
 }
-
+.payementInformation h1 {
+  font-size: 2vw;
+}
 
 .payementInformation input[type="text"] {
   border: transparent;

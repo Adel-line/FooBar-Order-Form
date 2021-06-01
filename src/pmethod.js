@@ -7,8 +7,8 @@ export default function Pmethod (props) {
             <div className="payementInformation ">
                 <h1>Payement Information</h1>
                 <div>
-                    <label className="payementLabel" htmlFor="namePayement">Full Name </label>
-                    <input id="namePayement" type="text" placeholder="Jhon Doe"></input>
+                    <label className="payementLabel"  htmlFor="namePayement" >Full Name </label>
+                    <input id="namePayement" type="text" name="cardname" placeholder="Jhon Doe" required></input>
                 </div>
                 <div >
                 <label className="payementLabel">Card Information </label>

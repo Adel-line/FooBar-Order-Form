@@ -13,8 +13,17 @@ import Modal from "./Modal";
 
 function App() {
 
-const beers = [ {id:"1", name:'HoppilyEverAfter', price: 20, key:"1" }, {id:"2", name:'Row26', price: 40, key:"2"}, {id:"3", name:'GitHop', price: 20, key:"3"}, {id:"4", name: 'Sleighride', price:20, key:"4"}, {id:"5", name:'Mowintime', price:30, key:"5"}, {id:"6", name:'ElHefe', price: 40, key:"6"}, {id:"7", name:'FairyTaleAle', price:20, key:"7"}, {id:"8", name:'HollabackLager', price: 30, key:"8"}, {id:"9", name:'RuinedChildhood', price: 30, key:"9"}];
+const beers = [ {id:"1", name:'HoppilyEverAfter', price: 20, key:"1" }, {id:"2", name:'Row26', price: 40, key:"2"}, {id:"3", name:'GitHop', price: 20, key:"3"}, {id:"4", name: 'Sleighride', price:20, key:"4"}, {id:"5", name:'Mowintime', price:30, key:"5"}, {id:"6", name:'ElHefe', price: 40, key:"6"}, {id:"7", name:'FairyTaleAle', price:20, key:"7"}, {id:"8", name:'HollabackLager', price: 30, key:"8"}, {id:"9", name:'RuinedChildhood', price: 30, key:"9"},{ id:"10", name:"Steampunk", price: 30, key:"10" }];
 
+const [validBeers,setValidBeers] = useState([]);
+useEffect(() => {
+  fetch("https://beer-bar.herokuapp.com/")
+  .then((res) => res.json())
+  .then((data) => {
+    setValidBeers(data.taps);
+  });
+} ,[]);
+console.log(validBeers);
 const [cartItems, setCartItems] = useState([]);
 const [amount, setAmount] = useState(1);
 const [readM , setReadM] = useState("");
@@ -101,16 +110,36 @@ useEffect(() => {
 
 //Sending info to the data base
 
-function dataSending () {
+function dataSending (name) {
   const form = document.querySelector("form");
   console.log(form.elements);
-}
+  post({
+      table_id: selectedT,
+      beers: cartItems,
+      extra_info:extras,
+      card_name:name
 
+  });
+}
+function post(data) {
+const postData = JSON.stringify(data);
+        fetch("https://foobar-1293.restdb.io/rest/foormidable", {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "x-apikey": "60a4dea0e3b6e02545edaa5d",
+            "cache-control": "no-cache",
+          },
+          body: postData,
+        })
+          .then((res) => res.json())
+          .then((data) => console.log(data));
+  }
 // MAIN RETURN FROM APP  MAIN RETURN FROM APP  MAIN RETURN FROM APP  MAIN RETURN FROM APP  MAIN RETURN FROM APP 
   return (
     <div className="App">
 
-      <Template  setInfoSelected={setInfoSelected} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}  openModal={openModal} />
+      <Template  validBeers={validBeers} setInfoSelected={setInfoSelected} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}  openModal={openModal} />
       <Form extras={extras} setExtras={setExtras}  dataSending={ dataSending}  totalPrice={totalPrice} setTotalPrice={setTotalPrice} selectedT={selectedT} setSelectedT={setSelectedT} openModal={openModal} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}Clicked={Clicked}  />
       <Modal readM={readM} info = {info} closeModal={closeModal} infoSelected={infoSelected} /> 
 
@@ -146,7 +175,7 @@ function Template(props) {
 
     return(
       <div>
-        <BeerList  setInfoSelected={setInfoSelected} openModal={openModal} onAdd ={onAdd} onRemove = {onRemove} beers = {props.beers} /> 
+        <BeerList validBeers={props.validBeers}  setInfoSelected={setInfoSelected} openModal={openModal} onAdd ={onAdd} onRemove = {onRemove} beers = {props.beers} /> 
       </div>      
     )
   }else{
@@ -215,23 +244,36 @@ function Fieldset (props) {
     }
   }
   
-  /* function CheckValidityPart3() {
-    const .... = document.querySelectorAll("....");
-    let validity = "";
-
-    ....forEach (... => {
-      if (....) {
-        validity = true;
-      }
-    })
+  function CheckValidityPart3() {
+    const form = document.querySelector("form");
+    let validity = form.checkValidity();
+    const creditcardins =document.querySelector("#card-number").value
+    const dateins =document.querySelector("#card-expiry").value
+    const cvcins =document.querySelector("#cvc").value
+    //let validity2 = creditcardins.checkValidity();
+    console.log(form.elements.cardname.value);
 
     if (validity) {
-      console.log("Valid - Pay");
-      props.Clicked();
+      if(creditcardins.length < 15){
+        console.log("Invalid");
+      }else{
+        if(dateins.length < 4){
+          console.log("Invalid");
+        }else{
+          if(cvcins.length < 3){
+            console.log("Invalid");
+          }else{
+            console.log("Valid - Pay"); 
+          props.dataSending(form.elements.cardname.value);
+          }
+        }
+      }
+      
     } else {
+     
       console.log("Invalid");
     }
-  } */
+  } 
 
 
 
@@ -259,7 +301,7 @@ function Fieldset (props) {
     return( 
       <div>
         <Payment  extras={props.extras} totalPrice={props.totalPrice} cartItems={cartItems} />
-        <button type="button" className="Button" onClick={props.dataSending}>Pay</button>
+        <button type="button" className="Button" onClick={CheckValidityPart3}>Pay</button>
       </div>
     )
   }
