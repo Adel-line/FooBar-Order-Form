@@ -4,14 +4,14 @@ export default function Pmethod (props) {
     console.log(props.methodP);
     if(props.methodP==="Credit card") {
         return (
-            <div className="payementInformation ">
-                <h1>Payement Information</h1>
+            <div className="paymentInformation ">
+                <h1>Payment Information</h1>
                 <div>
-                    <label className="payementLabel"  htmlFor="namePayement" >Full Name </label>
-                    <input id="namePayement" type="text" name="cardname" placeholder="Jhon Doe" required></input>
+                    <label className="paymentLabel"  htmlFor="namePayment" >Full Name </label>
+                    <input id="namePayment" type="text" name="cardname" placeholder="Jhon Doe" required></input>
                 </div>
                 <div >
-                <label className="payementLabel">Card Information </label>
+                <label className="paymentLabel">Card Information </label>
                 <CreditCardInput/>
                 </div>
                 

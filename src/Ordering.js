@@ -1,6 +1,6 @@
 export default function Ordering() {
     return (
-      <section className="Form">
+    <fieldset>
           <div className="NumItems">0 items</div>
           <div className="Item">
               <div className="ItemNum">1</div>
@@ -28,6 +28,6 @@ export default function Ordering() {
           <span>
               <input className="Button" type="Submit" value="Payment"></input>
           </span>
-      </section>
+    </fieldset>
     );
   }

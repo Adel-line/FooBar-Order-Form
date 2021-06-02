@@ -20,7 +20,7 @@ console.log(props);
                 <option value={"cash"} >Cash</option>
             </select>
             
-            <div className="itemsHolder">
+            <div className="itemsHolderPay">
             {props.cartItems.map((item) => (
                 <div id="details" key={item.id}>
                     <p className="pName">{item.name}</p>
@@ -28,7 +28,7 @@ console.log(props);
                 </div>
                 
             ))}
-            <div className="extreDis">
+            <div className="extraDis">
                 <p>Extra demands :</p>
                 <p> {props.extras}</p>
             </div>

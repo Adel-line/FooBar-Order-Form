@@ -6,9 +6,8 @@ export default function Tables(props) {
     // }
 
     return (
-      <fieldset id="FieldsetPart1" className="Form">
-          {/* <OrderNum /> */}
-          <p className="TablesOrder">Order no. 12345</p>
+      <fieldset id="FieldsetPart1" className={`Form ${props.phoneClass}`}>
+          <p className="TablesOrder">Ready to order</p>
           <p className="TablesHeader">Select your table:</p>
           <section className="Tables">
             <div className="TablesGrid">
@@ -77,10 +76,6 @@ export default function Tables(props) {
                 </div>
             </div>
           </section>
-          {/* <button type="button" className="Button">Proceed with order</button> */}
-           {/* <span>
-               <input className="Button" type="Submit" value="Proceed with order"></input>
-           </span> */}
       </fieldset>
     );
     

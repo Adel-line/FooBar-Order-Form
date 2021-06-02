@@ -17,7 +17,7 @@ export default function Beer(props) {
             </div>
           <div className="info2">
         <button onClick={() => openModal(props) }  className="moreinfo">Read more</button>
-        <button onClick={() => onAdd(props)}>+</button>
+        <button onClick={() => onAdd(props)} className="addDrink">+</button>
         </div>
       </section>
      

@@ -179,11 +179,17 @@ function Template(props) {
       </div>      
     )
   }else{
-    return(
-      <div>
-        <Welcome />
-      </div>
-    )
+    if (!window.matchMedia("(max-width: 749px)").matches) {
+      return(
+        <div>
+          <Welcome />
+        </div>
+      )
+    } else {
+      return(
+        <div></div>
+      )
+    }
   }
 }
 
@@ -282,7 +288,7 @@ function Fieldset (props) {
   if (props.amount === 1) {
     return (
       <div>
-        <Tables selectedT={props.selectedT} setSelectedT={props.setSelectedT} />
+        <Tables phoneClass={"phoneTable"} selectedT={props.selectedT} setSelectedT={props.setSelectedT} />
         <button onClick={checkValidityPart1} type="button" className="Button">Proceed with order</button>
       </div>
       )
