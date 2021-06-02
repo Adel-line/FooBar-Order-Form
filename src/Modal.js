@@ -63,7 +63,7 @@ return (
                  <Speech pitch="1" rate="0.9" volume="1.1" voice="Google UK English Male"  stop={true} pause={true} text={infoModale.description.overallImpression} />  
                  <p><span>OVERALL: </span>{infoModale.description.overallImpression}</p>
              </div>
-            <img className ="modalImage" src={infoModale.label} alt="label goes here"></img>
+            <img className ="modalImage" src={props.readM+".png"} alt="label goes here"></img>
             </div>
             <div className="description">
             <p><span>AROMA: </span>{infoModale.description.aroma}</p>
