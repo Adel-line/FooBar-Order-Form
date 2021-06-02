@@ -143,12 +143,6 @@ const postData = JSON.stringify(data);
       <Form extras={extras} setExtras={setExtras}  dataSending={ dataSending}  totalPrice={totalPrice} setTotalPrice={setTotalPrice} selectedT={selectedT} setSelectedT={setSelectedT} openModal={openModal} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}Clicked={Clicked}  />
       <Modal readM={readM} info = {info} closeModal={closeModal} infoSelected={infoSelected} /> 
 
-      <div className="change-page">
-          <button onClick={Clicked} > click me for more! </button>
-            {amount}
-          <button onClick={ClickedMinus} > click me for less! </button>
-      </div>
-
     </div>
   );
 
@@ -307,7 +301,7 @@ function Fieldset (props) {
     return( 
       <div>
         <Payment  extras={props.extras} totalPrice={props.totalPrice} cartItems={cartItems} />
-        <button type="button" className="Button" onClick={CheckValidityPart3}>Pay</button>
+        <button type="submit" className="Button" onClick={CheckValidityPart3}>Pay</button>
       </div>
     )
   }

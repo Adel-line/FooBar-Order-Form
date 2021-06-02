@@ -763,6 +763,87 @@ input::placeholder {
   #selectionar {
     font-size: 2vw;
   }
+  /* MODAL */
+  .modalImage {
+    width: 10vw;
+    margin-left: 15vw;
+    margin-top: 1.5vw;
+  }
+
+  .modal {
+    top: 15vw;
+    left: 25vw;
+    width: 55vw;
+    height: 40vw;
+  }
+
+  #close {
+    top: 1.5vw;
+    left: -22vw;
+    width: 2vw;
+    height: 2vw;
+  }
+
+  #general {
+    height: 15vw;
+  }
+
+  #titles {
+    width: 19vw;
+    height: 8vw;
+    left: 10vw;
+    top: 1vw;
+  }
+
+  #titles h1 {
+    font-size: 2vw;
+  }
+
+  #cat {
+    width: 20vw;
+    margin-left: -1.5vw;
+  }
+
+  #cat h2 {
+    font-size: 1vw;
+  }
+
+  #cat h3 {
+    font-size: 1.4vw;
+  }
+
+  #titles p {
+    font-size: 1vw;
+  }
+  .description {
+    padding-top: 10vw;
+    padding-bottom: 2vw;
+  }
+
+  .description p {
+    font-size: 0.9vw;
+  }
+
+  .description p span {
+    font-size: 1.1vw;
+  }
+
+  /* Buttons TEXT To Speech */
+
+  button.rs-play {
+    height: 3vw;
+    width: 3vw;
+  }
+
+  button.rs-stop {
+    height: 3vw;
+    width: 3vw;
+  }
+
+  button.rs-pause {
+    height: 3vw;
+    width: 3vw;
+  }
 }
 
 @media only screen and (max-width: 749px) {
@@ -989,5 +1070,94 @@ input::placeholder {
   }
   #selectionar {
     font-size: 5vw;
+  }
+  /* MODAL */
+  .modalImage {
+    width: auto;
+    height: 24vw;
+    margin-left: 15vw;
+    margin-top: 1.5vw;
+  }
+
+  .modal {
+    top: 15vw;
+    left: 10vw;
+    width: 80vw;
+    height: 120vw;
+  }
+
+  #close {
+    top: 3vw;
+    left: -30vw;
+    width: 4vw;
+    height: 4vw;
+  }
+
+  #general {
+    top: 4vw;
+    height: 15vw;
+  }
+
+  #titles {
+    width: 30vw;
+    height: 8vw;
+    left: 10vw;
+    top: 1vw;
+  }
+
+  #titles h1 {
+    font-size: 4vw;
+  }
+
+  #cat {
+    width: 20vw;
+    margin-left: -1.5vw;
+  }
+
+  #cat h2 {
+    font-size: 2vw;
+  }
+
+  #cat h3 {
+    font-size: 2.2vw;
+  }
+
+  #titles p {
+    font-size: 1.6vw;
+  }
+  .description {
+    padding-top: 35vw;
+    padding-bottom: 2vw;
+  }
+
+  .description p {
+    font-size: 3vw;
+  }
+  .description p span {
+    font-size: 3.3vw;
+  }
+
+  .overallText span {
+    font-size: 2vw;
+  }
+
+  p .overallText {
+    font-size: 1.2vw;
+  }
+  /* Buttons TEXT To Speech */
+
+  button.rs-play {
+    height: 8vw;
+    width: 8vw;
+  }
+
+  button.rs-stop {
+    height: 8vw;
+    width: 8vw;
+  }
+
+  button.rs-pause {
+    height: 8vw;
+    width: 8vw;
   }
 }
