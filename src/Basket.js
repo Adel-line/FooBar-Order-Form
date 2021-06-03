@@ -5,7 +5,7 @@ import BasketItem from './BasketItem';
 export default function Basket(props) {
 
     const {cartItems, onAdd, onRemove} = props;
-
+    
     // Money calculations
     let itemsPrice =[];
     let subtotal = 0;

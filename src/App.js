@@ -59,13 +59,49 @@ const onAdd = (beer) => {
 
 // REMOVE PRODUCTS FROM CART REMOVE PRODUCTS FROM CART REMOVE PRODUCTS FROM CART REMOVE PRODUCTS FROM CART REMOVE PRODUCTS FROM CART REMOVE PRODUCTS FROM CART
 
-const onRemove = (beers) => {
-  const available = cartItems.find(x => x.key === beers.key);
-  if(available.qty === 1) {
-    setCartItems(cartItems.filter((x) => x.key !== beers.key));
-  } else {
-    setCartItems(cartItems.map(x => x.name === beers.id ? {...available, qty: available.qty -1} :x));
+const onRemove = (beer) => {
+  console.log(beer,cartItems);
+  if (cartItems.findIndex((x) => x.id === beer.id) ) {
+    if(beer.amount === 1) {
+      console.log('i have nothibg');
+      setCartItems(cartItems.filter(item => item.id !== beer.id));
+    }else{
+    
+    const newItem = cartItems.map((item) => {
+      if (item.id === beer.id ) {
+         item.amount -= 1;
+       }
+        return (
+         item
+      )
+    });
+    setCartItems(newItem);
   }
+    
+  } else{
+    
+    if (cartItems.findIndex((x) => x.id === beer.id) ) {
+      console.log('yes');
+    }else{
+      console.log('no');
+      if(beer.amount === 1) {
+        console.log('i have nothibg');
+        setCartItems(cartItems.filter(item => item.id !== beer.id));
+      }else{
+      const newItem = cartItems.map((item) => {
+        if (item.id === beer.id ) {
+           item.amount -= 1;
+         }
+          return (
+           item
+        )
+      });
+      setCartItems(newItem);
+    }
+  }
+    
+  }
+  console.log(cartItems);
 }
 
 function Clicked() {
@@ -78,15 +114,15 @@ function Clicked() {
    });
 }
 
-function ClickedMinus() {
-  setAmount((prevState) => {
-    if (!prevState){
-      return prevState
-    } else {
-      return prevState-1
-    }
-   });
-}
+// function ClickedMinus() {
+//   setAmount((prevState) => {
+//     if (!prevState){
+//       return prevState
+//     } else {
+//       return prevState-1
+//     }
+//    });
+// }
 
 // MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS  MODAL FUNCTIONS 
 
@@ -140,7 +176,7 @@ const postData = JSON.stringify(data);
     <div className="App">
 
       <Template  validBeers={validBeers} setInfoSelected={setInfoSelected} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}  openModal={openModal} />
-      <Form extras={extras} setExtras={setExtras}  dataSending={ dataSending}  totalPrice={totalPrice} setTotalPrice={setTotalPrice} selectedT={selectedT} setSelectedT={setSelectedT} openModal={openModal} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}Clicked={Clicked}  />
+      <Form extras={extras} setExtras={setExtras}  dataSending={ dataSending}  totalPrice={totalPrice} setTotalPrice={setTotalPrice} selectedT={selectedT} setSelectedT={setSelectedT} openModal={openModal} amount={amount} beers={beers} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} Clicked={Clicked}  />
       <Modal readM={readM} info = {info} closeModal={closeModal} infoSelected={infoSelected} /> 
 
     </div>
@@ -196,7 +232,7 @@ function Form (props) {
     <section className="base">
       <div className="box">
         <form>
-          <Fieldset  dataSending={ props.dataSending} extras={props.extras} setExtras={props.setExtras} totalPrice={props.totalPrice} setTotalPrice={props.setTotalPrice} {...props} selectedT={props.selectedT} setSelectedT={props.setSelectedT} Clicked={props.Clicked} />
+          <Fieldset  amount={props.amount} dataSending={ props.dataSending} extras={props.extras} setExtras={props.setExtras} totalPrice={props.totalPrice} setTotalPrice={props.setTotalPrice} onAdd={props.onAdd} onRemove={props.onRemove} selectedT={props.selectedT} setSelectedT={props.setSelectedT} Clicked={props.Clicked} cartItems={props.cartItems} />
         </form>
       </div>
     </section>
@@ -290,6 +326,7 @@ function Fieldset (props) {
     
     const onAdd = props.onAdd;
     const onRemove = props.onRemove;
+
     return(
         <div>
           <Basket  setExtras={props.setExtras} setTotalPrice={props.setTotalPrice} onAdd ={onAdd} onRemove= {onRemove} cartItems={cartItems}/>

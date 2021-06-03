@@ -3,6 +3,7 @@ import React from 'react'
 export default function BasketItem(props) {
 console.log(props);
     const {onAdd, onRemove} = props;
+    console.log(onRemove);
     return (
         <div id="details">
     
