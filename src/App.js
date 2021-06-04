@@ -169,7 +169,7 @@ const postData = JSON.stringify(data);
           body: postData,
         })
           .then((res) => res.json())
-          .then((data) => console.log(data));
+          .then((data) => {console.log(data);window.location.reload()});
   }
 // MAIN RETURN FROM APP  MAIN RETURN FROM APP  MAIN RETURN FROM APP  MAIN RETURN FROM APP  MAIN RETURN FROM APP 
   return (
@@ -338,7 +338,7 @@ function Fieldset (props) {
     return( 
       <div>
         <Payment  extras={props.extras} totalPrice={props.totalPrice} cartItems={cartItems} />
-        <button type="submit" className="Button" onClick={CheckValidityPart3}>Pay</button>
+        <button type="button" className="Button" onClick={CheckValidityPart3}>Pay</button>
       </div>
     )
   }
