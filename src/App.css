@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap');
+
 .App {
   text-align: center;
 
@@ -81,6 +83,7 @@ html {
 
 h2 {
   font-size: 0.7vw;
+  font-family: 'Oswald', sans-serif;
 }
 
 p {
@@ -141,6 +144,9 @@ span {
 
 .WelcomeButton {
   display: none;
+  background-color: #e3b449;
+  border-radius: 2vw;
+  border: 1vw solid #e3b449;
 }
 
 .WelcomeTitle {
@@ -232,8 +238,7 @@ fieldset {
 }
 
 #titles h1 {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 2vw;
   font-weight: 500;
 }
@@ -847,6 +852,22 @@ input::placeholder {
 }
 
 @media only screen and (max-width: 749px) {
+  
+  /* TEXT */
+h1 {
+  font-size: 0.7vw;
+}
+
+  h2 {
+    font-size: 0.5vw;
+  }
+  
+  p {
+    font-size: 0.3vw;
+    font-weight: 400;
+  }
+
+
   /* Welcome */
   .Welcome {
     left: 1vw;
@@ -887,12 +908,13 @@ input::placeholder {
     left: 5vw;
     height: 150vw;
     width: 90vw;
+    border-radius: 5vw;
   }
   .Button {
     height: 10vw;
-    width: 90%;
+    width: 80%;
     bottom: 3vw;
-    left: 3.1vw;
+    margin-left:4vw;
     font-size: 6vw;
     border-radius: 4vw;
   }
@@ -965,6 +987,12 @@ input::placeholder {
     margin-left: 4vw;
     margin-top: 60vw;
   }
+
+  #details {
+    margin-top: -4vw;
+    padding: 1.5vw;
+  }
+
   .extra input {
     margin-left: 4vw;
     width: 79vw;
@@ -975,6 +1003,7 @@ input::placeholder {
     width: 80vw;
     top: 2vw;
     left: 4vw;
+    overflow-y: scroll;
   }
   .beerbox {
     width: 35vw;
